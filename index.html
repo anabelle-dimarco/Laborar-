@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaborAr — Onboarding que retiene talento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════
+     CURSOR PERSONALIZADO
+     ═══════════════════════════════ -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ═══════════════════════════════
+     LANDING
+     ═══════════════════════════════ -->
+<div id="page-landing" class="page landing-style active">
+  <nav class="pub-nav">
+    <div class="pub-nav-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
+    <ul class="nav-links">
+      <li><a onclick="scrollToSection('features')">Funcionalidades</a></li>
+      <li><a onclick="scrollToSection('testimonials')">Casos de uso</a></li>
+      <li><a onclick="scrollToSection('pricing')">Precios</a></li>
+      <li><a onclick="navigate('contacto')">Contacto</a></li>
+    </ul>
+    <div style="display:flex;gap:0.8rem;align-items:center">
+      <button class="tb-btn ghost" onclick="navigate('dashboard')">Iniciar sesión</button>
+      <button class="nav-cta" onclick="navigate('dashboard')">Empezar gratis →</button>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-badge">✦ Plataforma de onboarding IA para LATAM</div>
+    <h1 class="hero-title">
+      Onboarding que<br>
+      <span class="italic">retiene</span> talento
+    </h1>
+    <p class="hero-desc">Automatizá el proceso de incorporación con flujos inteligentes, un asistente de IA 24/7 y analytics que detectan riesgo de renuncia antes de que ocurra.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="navigate('dashboard')">Empezar gratis — 14 días →</button>
+      <button class="btn-secondary" onclick="navigate('agente')">Ver demo en vivo</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">8.2<em>d</em></div><div class="lbl">Onboarding promedio</div></div>
+      <div class="hero-stat"><div class="num">94<em>%</em></div><div class="lbl">Retención a 90 días</div></div>
+      <div class="hero-stat"><div class="num">3<em>x</em></div><div class="lbl">Más rápido que manual</div></div>
+      <div class="hero-stat"><div class="num">+500</div><div class="lbl">Empresas en LATAM</div></div>
+    </div>
+  </section>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="ticker-item">Automatización de flujos</span>
+      <span class="ticker-item">Asistente IA 24/7</span>
+      <span class="ticker-item">Analytics predictivo</span>
+      <span class="ticker-item">Integración con Workday</span>
+      <span class="ticker-item">Firma digital</span>
+      <span class="ticker-item">Alertas de riesgo</span>
+      <span class="ticker-item">Onboarding en 8 días</span>
+      <span class="ticker-item">Sin tarjeta de crédito</span>
+      <span class="ticker-item">Automatización de flujos</span>
+      <span class="ticker-item">Asistente IA 24/7</span>
+      <span class="ticker-item">Analytics predictivo</span>
+      <span class="ticker-item">Integración con Workday</span>
+      <span class="ticker-item">Firma digital</span>
+      <span class="ticker-item">Alertas de riesgo</span>
+      <span class="ticker-item">Onboarding en 8 días</span>
+      <span class="ticker-item">Sin tarjeta de crédito</span>
+    </div>
+  </div>
+
+  <section class="features" id="features">
+    <div class="section-header">
+      <div class="section-tag">Funcionalidades</div>
+      <h2 class="section-title">Todo lo que necesitás para un onboarding moderno</h2>
+      <p class="section-sub">Desde el primer día hasta los 90 días, LaborAr acompaña cada paso del proceso.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon">⚡</div>
+        <h3>Flujos automáticos</h3>
+        <p>Secuencias de tareas, documentos y capacitaciones que se activan solas según el rol y área del empleado.</p>
+        <div class="feat-tag">Sin código</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🤖</div>
+        <h3>Asistente IA 24/7</h3>
+        <p>Un agente de IA que responde dudas del empleado a cualquier hora, en español, sobre la empresa y procesos internos.</p>
+        <div class="feat-tag">LLaMA 3.3</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📊</div>
+        <h3>Analytics predictivo</h3>
+        <p>Detectamos señales de riesgo de renuncia antes de que ocurran y te avisamos con tiempo para actuar.</p>
+        <div class="feat-tag">Tiempo real</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔌</div>
+        <h3>Integraciones nativas</h3>
+        <p>Conectamos con Workday, SAP, BambooHR, Google Workspace y Microsoft 365 en menos de 2 días.</p>
+        <div class="feat-tag">+20 conectores</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">✍️</div>
+        <h3>Firma digital</h3>
+        <p>Contratos, NDAs y políticas internas firmados digitalmente con validez legal en Argentina, México y Brasil.</p>
+        <div class="feat-tag">Legal</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📱</div>
+        <h3>App móvil</h3>
+        <p>Los empleados completan el onboarding desde el celular. Disponible en iOS y Android con experiencia nativa.</p>
+        <div class="feat-tag">iOS · Android</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="big-feature" style="padding:0 3rem 7rem;max-width:1200px;margin:0 auto">
+    <div class="bf-inner">
+      <div class="bf-left">
+        <div class="bf-label">Asistente IA en acción</div>
+        <h2>Tu empleado nunca está solo, ni a las 11 de la noche</h2>
+        <p>Aria, nuestro agente de IA, responde en segundos cualquier duda sobre beneficios, procesos, políticas y tareas pendientes. Sin esperar respuesta de RRHH.</p>
+        <ul class="bf-bullets">
+          <li>Responde en español rioplatense, mexicano o neutro según la región</li>
+          <li>Conectado a los documentos y políticas de tu empresa</li>
+          <li>Transfiere a un humano cuando la consulta lo requiere</li>
+          <li>Aprende de cada conversación para mejorar</li>
+        </ul>
+      </div>
+      <div class="bf-right">
+        <div class="chat-bubble bot">
+          <div class="name">Aria · Asistente LaborAr</div>
+          ¡Hola Sofía! Bienvenida al equipo 👋 Soy Aria y voy a acompañarte durante tu onboarding. ¿En qué te puedo ayudar hoy?
+        </div>
+        <div class="chat-bubble user">
+          <div class="name">Sofía L. · Diseño UX</div>
+          ¿Cuándo cobro el primer mes? ¿El 1 o el 30?
+        </div>
+        <div class="chat-bubble bot">
+          <div class="name">Aria · Asistente LaborAr</div>
+          El pago en tu empresa es el último día hábil de cada mes 💰 Como entraste el 15, tu primer pago será proporcional al tiempo trabajado. ¿Querés que te explique cómo se calcula?
+        </div>
+        <div class="chat-typing">
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="t-inner">
+      <div class="section-header">
+        <div class="section-tag">Casos de uso</div>
+        <h2 class="section-title">Empresas que ya retienen más talento</h2>
+      </div>
+      <div class="t-grid">
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"Bajamos el tiempo de onboarding de 3 semanas a 8 días. Y lo más importante: el 94% de los nuevos empleados dice que fue una experiencia positiva."</p>
+          <div class="t-author">
+            <div class="t-avatar">MG</div>
+            <div class="t-author-info">
+              <div class="name">Marcela González</div>
+              <div class="role">VP de RRHH · Grupo Techba</div>
+            </div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"El asistente IA redujo el 60% de las consultas repetitivas que recibíamos por WhatsApp. Ahora mi equipo se enfoca en lo que importa."</p>
+          <div class="t-author">
+            <div class="t-avatar">RP</div>
+            <div class="t-author-info">
+              <div class="name">Rodrigo Paz</div>
+              <div class="role">Director RRHH · StartupMX</div>
+            </div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"La integración con Workday fue en 2 días como prometieron. Sin complicaciones. El equipo de soporte fue excelente en cada paso."</p>
+          <div class="t-author">
+            <div class="t-avatar">AC</div>
+            <div class="t-author-info">
+              <div class="name">Andrea Castro</div>
+              <div class="role">CTO · FinTech Buenos Aires</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="p-inner">
+      <div class="section-header">
+        <div class="section-tag">Precios</div>
+        <h2 class="section-title">Simple, transparente, sin sorpresas</h2>
+        <p class="section-sub">Todos los planes incluyen 14 días de prueba gratuita. Sin tarjeta de crédito.</p>
+      </div>
+      <div class="p-grid">
+        <div class="p-card">
+          <div class="p-tier">Starter</div>
+          <div class="p-price"><sup>$</sup>299<span class="period">/mes</span></div>
+          <p class="p-desc">Para equipos que están comenzando a estructurar su onboarding.</p>
+          <ul class="p-features">
+            <li>Hasta 100 empleados</li>
+            <li>Flujos de onboarding</li>
+            <li>Portal del empleado</li>
+            <li>Analytics básico</li>
+            <li class="off">Asistente IA</li>
+            <li class="off">Integraciones premium</li>
+          </ul>
+          <button class="p-btn outline" onclick="navigate('contacto')">Empezar gratis</button>
+        </div>
+        <div class="p-card featured">
+          <div class="featured-badge">Popular</div>
+          <div class="p-tier">Growth</div>
+          <div class="p-price"><sup>$</sup>799<span class="period">/mes</span></div>
+          <p class="p-desc">Para empresas que buscan escalar con automatización e IA.</p>
+          <ul class="p-features">
+            <li>Hasta 500 empleados</li>
+            <li>Flujos avanzados</li>
+            <li>Asistente IA 24/7</li>
+            <li>Analytics predictivo</li>
+            <li>Todas las integraciones</li>
+            <li class="off">On-premise / SSO</li>
+          </ul>
+          <button class="p-btn solid" onclick="navigate('contacto')">Empezar gratis</button>
+        </div>
+        <div class="p-card">
+          <div class="p-tier">Enterprise</div>
+          <div class="p-price" style="font-size:2rem">A medida</div>
+          <p class="p-desc">Para corporaciones con necesidades avanzadas de seguridad y escala.</p>
+          <ul class="p-features">
+            <li>Empleados ilimitados</li>
+            <li>On-premise disponible</li>
+            <li>SSO / SAML</li>
+            <li>SLA garantizado</li>
+            <li>Customer Success dedicado</li>
+            <li>Modelo IA propio</li>
+          </ul>
+          <button class="p-btn outline" onclick="navigate('contacto')">Hablar con ventas</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>¿Listo para hacer el onboarding que tu equipo <em>merece</em>?</h2>
+      <p>Unite a las +500 empresas en LATAM que ya retienen más talento con LaborAr.</p>
+      <div class="cta-form">
+        <input type="email" placeholder="tu@empresa.com" id="ctaEmail">
+        <button class="btn-primary" onclick="navigate('dashboard')">Empezar gratis →</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pub-footer">
+    <div class="f-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
+    <p>© 2026 LaborAr. Hecho con ❤️ en Argentina.</p>
+    <div class="f-links">
+      <a onclick="navigate('terminos')">Términos</a>
+      <a onclick="navigate('privacidad')">Privacidad</a>
+      <a onclick="navigate('contacto')">Contacto</a>
+      <a onclick="navigate('agente')">Asistente IA</a>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════
+     APP SHELL (sidebar + main)
+     ═══════════════════════════════ -->
+
+<!-- SIDEBAR (shared for all app pages) -->
+<aside class="sidebar" id="app-sidebar">
+  <div class="sb-logo">
+    <div class="sb-logo-icon">L</div>
+    Labor<span>Ar</span>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-section">Principal</div>
+    <div class="sb-item" data-nav="dashboard"><span class="icon">⊞</span> Dashboard</div>
+    <div class="sb-item" data-nav="empleados"><span class="icon">👥</span> Empleados<span class="sb-badge">12</span></div>
+    <div class="sb-item" data-nav="flujos"><span class="icon">⚡</span> Flujos</div>
+    <div class="sb-item" data-nav="asistente"><span class="icon">🤖</span> Asistente IA</div>
+    <div class="sb-section">Análisis</div>
+    <div class="sb-item" data-nav="analytics"><span class="icon">📊</span> Analytics</div>
+    <div class="sb-item" data-nav="alertas"><span class="icon">⚠️</span> Alertas<span class="sb-badge warn">3</span></div>
+    <div class="sb-item" data-nav="reportes"><span class="icon">📋</span> Reportes</div>
+    <div class="sb-section">Config</div>
+    <div class="sb-item" data-nav="integraciones"><span class="icon">🔌</span> Integraciones</div>
+    <div class="sb-item" data-nav="ajustes"><span class="icon">⚙️</span> Ajustes</div>
+    <div class="sb-item" data-nav="landing" style="margin-top:1rem;border-top:1px solid var(--border);padding-top:1rem"><span class="icon">🌐</span> Ver landing</div>
+  </nav>
+  <div class="sb-user">
+    <div class="sb-avatar">LM</div>
+    <div class="sb-user-info">
+      <div class="name">Laura Méndez</div>
+      <div class="role">HR Manager</div>
+    </div>
+  </div>
+</aside>
+
+<!-- OVERLAY MÓVIL -->
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<!-- ═══════════════════════════════
+     DASHBOARD
+     ═══════════════════════════════ -->
+<div id="page-dashboard" class="page app-page">
+  <main class="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <h1>Dashboard</h1>
+        <p id="dash-date">Cargando fecha...</p>
+      </div>
+      <div class="topbar-right"><button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()"><span></span><span></span><span></span></button>
+        <input class="tb-search" placeholder="🔍  Buscar empleado...">
+        <div class="notif-btn">🔔<div class="notif-dot"></div></div>
+        <button class="tb-btn">+ Nuevo empleado</button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="kpi-row">
+        <div class="kpi"><div class="kpi-top"><span class="kpi-label">En onboarding activo</span><span class="kpi-icon">👥</span></div><div class="kpi-value">12</div><div class="kpi-delta up">↑ +3 vs semana pasada</div></div>
+        <div class="kpi"><div class="kpi-top"><span class="kpi-label">Completitud promedio</span><span class="kpi-icon">📊</span></div><div class="kpi-value">74<span style="font-size:1.2rem;color:var(--muted)">%</span></div><div class="kpi-delta up">↑ +8% este mes</div></div>
+        <div class="kpi"><div class="kpi-top"><span class="kpi-label">Tiempo promedio</span><span class="kpi-icon">⏱️</span></div><div class="kpi-value">8.2<span style="font-size:1rem;color:var(--muted)"> días</span></div><div class="kpi-delta up">↓ 5 días menos</div></div>
+        <div class="kpi"><div class="kpi-top"><span class="kpi-label">Riesgo de renuncia</span><span class="kpi-icon">⚠️</span></div><div class="kpi-value" style="color:var(--warn)">2</div><div class="kpi-delta down">↑ Requieren atención</div></div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header"><h3>Empleados en onboarding</h3><button class="view-all" onclick="navigate('empleados')">Ver todos →</button></div>
+          <div class="card-body" style="padding:0 1.5rem">
+            <table class="emp-table">
+              <thead><tr><th>Empleado</th><th>Estado</th><th>Progreso</th><th>Día</th></tr></thead>
+              <tbody>
+                <tr><td><div class="emp-name"><div class="emp-av c1">AG</div><div class="emp-info"><div class="n">Ana García</div><div class="r">Diseño UX</div></div></div></td><td><span class="status-pill s-active">Activo</span></td><td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress-bar"><div class="progress-fill" style="width:82%"></div></div><span style="font-size:0.7rem;color:var(--muted)">82%</span></div></td><td><span class="day-badge">Día 4</span></td></tr>
+                <tr><td><div class="emp-name"><div class="emp-av c2">MR</div><div class="emp-info"><div class="n">Matías Ruiz</div><div class="r">Backend Dev</div></div></div></td><td><span class="status-pill s-active">Activo</span></td><td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress-bar"><div class="progress-fill" style="width:61%"></div></div><span style="font-size:0.7rem;color:var(--muted)">61%</span></div></td><td><span class="day-badge">Día 7</span></td></tr>
+                <tr><td><div class="emp-name"><div class="emp-av c3">SL</div><div class="emp-info"><div class="n">Sofía López</div><div class="r">Marketing</div></div></div></td><td><span class="status-pill s-pending">Pendiente</span></td><td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress-bar"><div class="progress-fill warn" style="width:35%"></div></div><span style="font-size:0.7rem;color:var(--muted)">35%</span></div></td><td><span class="day-badge">Día 9</span></td></tr>
+                <tr><td><div class="emp-name"><div class="emp-av c4">CF</div><div class="emp-info"><div class="n">Carlos Flores</div><div class="r">Ventas</div></div></div></td><td><span class="status-pill s-risk">En riesgo</span></td><td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress-bar"><div class="progress-fill low" style="width:18%"></div></div><span style="font-size:0.7rem;color:var(--muted)">18%</span></div></td><td><span class="day-badge">Día 12</span></td></tr>
+                <tr><td><div class="emp-name"><div class="emp-av c5">PV</div><div class="emp-info"><div class="n">Paula Vera</div><div class="r">Finanzas</div></div></div></td><td><span class="status-pill s-active">Activo</span></td><td><div style="display:flex;align-items:center;gap:0.5rem"><div class="progress-bar"><div class="progress-fill" style="width:95%"></div></div><span style="font-size:0.7rem;color:var(--muted)">95%</span></div></td><td><span class="day-badge">Día 2</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><h3>Actividad reciente</h3></div>
+          <div class="card-body" style="padding:0 1.5rem">
+            <div class="act-item"><div class="act-dot green"></div><div><div class="act-text"><strong>Ana García</strong> completó el módulo de bienvenida</div><div class="act-time">hace 12 min</div></div></div>
+            <div class="act-item"><div class="act-dot yellow"></div><div><div class="act-text"><strong>Carlos Flores</strong> lleva 3 días sin actividad</div><div class="act-time">hace 1 hora · Alerta automática</div></div></div>
+            <div class="act-item"><div class="act-dot blue"></div><div><div class="act-text"><strong>Paula Vera</strong> usó el asistente IA (4 preguntas)</div><div class="act-time">hace 2 horas</div></div></div>
+            <div class="act-item"><div class="act-dot green"></div><div><div class="act-text"><strong>Matías Ruiz</strong> firmó su contrato digitalmente</div><div class="act-time">hace 3 horas</div></div></div>
+            <div class="act-item"><div class="act-dot yellow"></div><div><div class="act-text"><strong>Sofía López</strong> aún no completó el perfil</div><div class="act-time">hace 5 horas</div></div></div>
+            <div class="act-item"><div class="act-dot green"></div><div><div class="act-text">Nuevo empleado incorporado: <strong>Roberto Díaz</strong></div><div class="act-time">ayer · Desde Workday</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-header"><h3>Ingresos esta semana</h3></div>
+          <div class="card-body">
+            <div class="chart-bars">
+              <div class="bar-col"><div class="bar" style="height:35%"></div><span class="bar-lbl">L</span></div>
+              <div class="bar-col"><div class="bar" style="height:60%"></div><span class="bar-lbl">M</span></div>
+              <div class="bar-col"><div class="bar" style="height:45%"></div><span class="bar-lbl">Mi</span></div>
+              <div class="bar-col"><div class="bar active" style="height:80%"></div><span class="bar-lbl">J</span></div>
+              <div class="bar-col"><div class="bar" style="height:55%"></div><span class="bar-lbl">V</span></div>
+              <div class="bar-col"><div class="bar" style="height:20%"></div><span class="bar-lbl">S</span></div>
+              <div class="bar-col"><div class="bar" style="height:10%"></div><span class="bar-lbl">D</span></div>
+            </div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:0.8rem">5 ingresos esta semana · +2 vs anterior</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><h3>Estado del equipo</h3></div>
+          <div class="card-body">
+            <div class="ring-container">
+              <svg width="90" height="90" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="35" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="12"/>
+                <circle cx="45" cy="45" r="35" fill="none" stroke="#00e5a0" stroke-width="12" stroke-dasharray="131.9 219.9" stroke-dashoffset="54.97" stroke-linecap="round" transform="rotate(-90 45 45)"/>
+                <circle cx="45" cy="45" r="35" fill="none" stroke="#f59e0b" stroke-width="12" stroke-dasharray="43.96 219.9" stroke-dashoffset="-76.93" stroke-linecap="round" transform="rotate(-90 45 45)"/>
+                <circle cx="45" cy="45" r="35" fill="none" stroke="#ef4444" stroke-width="12" stroke-dasharray="21.98 219.9" stroke-dashoffset="-120.89" stroke-linecap="round" transform="rotate(-90 45 45)"/>
+                <text x="45" y="49" text-anchor="middle" fill="white" font-size="14" font-family="Syne" font-weight="800">12</text>
+              </svg>
+              <div class="ring-legend">
+                <div class="ring-item"><div class="ring-dot" style="background:var(--accent)"></div><span class="ring-item-label">Activos</span><span class="ring-item-val">7</span></div>
+                <div class="ring-item"><div class="ring-dot" style="background:var(--warn)"></div><span class="ring-item-label">Pendientes</span><span class="ring-item-val">3</span></div>
+                <div class="ring-item"><div class="ring-dot" style="background:var(--red)"></div><span class="ring-item-label">En riesgo</span><span class="ring-item-val">2</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><h3>Alertas activas</h3><span class="sb-badge warn">3</span></div>
+          <div class="card-body" style="padding:1rem 1.2rem">
+            <div class="alert-list">
+              <div class="alert-item crit"><div class="alert-icon">🔴</div><div class="alert-text"><div class="title">Carlos Flores — Riesgo alto</div><div class="desc">Sin actividad 3 días. Día 12 de onboarding.</div></div></div>
+              <div class="alert-item"><div class="alert-icon">🟡</div><div class="alert-text"><div class="title">Sofía López — Perfil incompleto</div><div class="desc">Faltan datos bancarios y contrato.</div></div></div>
+              <div class="alert-item info"><div class="alert-icon">🔵</div><div class="alert-text"><div class="title">3 empleados inician el lunes</div><div class="desc">Flujos pre-onboarding pendientes de activar.</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══════════════════════════════
+     EMPLEADOS
+     ═══════════════════════════════ -->
+<div id="page-empleados" class="page app-page">
+  <main class="main">
+    <div class="topbar">
+      <div class="topbar-left"><h1>Empleados</h1><p>12 en onboarding activo · 3 completados este mes</p></div>
+      <div class="topbar-right"><button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()"><span></span><span></span><span></span></button><input class="tb-search" placeholder="🔍  Buscar..."><button class="tb-btn">+ Agregar empleado</button></div>
+    </div>
+    <div class="content">
+      <div class="filters">
+        <button class="filter-btn active">Todos (12)</button>
+        <button class="filter-btn">Activos (7)</button>
+        <button class="filter-btn">Pendientes (3)</button>
+        <button class="filter-btn">En riesgo (2)</button>
+        <div class="filter-sep"></div>
+        <button class="filter-btn">Diseño</button>
+        <button class="filter-btn">Tech</button>
+        <button class="filter-btn">Ventas</button>
+        <button class="filter-btn">Marketing</button>
+      </div>
+      <div class="card">
+        <table class="emp-table-full" style="width:100%;border-collapse:collapse">
+          <thead><tr><th>Empleado</th><th>Área</th><th>Estado</th><th>Progreso</th><th>Día</th><th>Ingreso</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><div class="emp-name-cell"><div class="av av1">AG</div><div class="emp-info"><div class="n">Ana García</div><div class="e">ana@empresa.com</div></div></div></td><td>Diseño UX</td><td><span class="status-pill s-active">Activo</span></td><td><div class="progress-wrap"><div class="progress-bar-sm"><div class="pf-green" style="width:82%;height:100%;border-radius:100px"></div></div><span class="pct">82%</span></div></td><td><span class="day-chip">Día 4</span></td><td style="color:var(--muted);font-size:0.8rem">01 Mar</td><td><button class="action-btn">Ver →</button></td></tr>
+            <tr><td><div class="emp-name-cell"><div class="av av2">MR</div><div class="emp-info"><div class="n">Matías Ruiz</div><div class="e">matias@empresa.com</div></div></div></td><td>Backend Dev</td><td><span class="status-pill s-active">Activo</span></td><td><div class="progress-wrap"><div class="progress-bar-sm"><div class="pf-yellow" style="width:61%;height:100%;border-radius:100px"></div></div><span class="pct">61%</span></div></td><td><span class="day-chip">Día 7</span></td><td style="color:var(--muted);font-size:0.8rem">27 Feb</td><td><button class="action-btn">Ver →</button></td></tr>
+            <tr><td><div class="emp-name-cell"><div class="av av3">SL</div><div class="emp-info"><div class="n">Sofía López</div><div class="e">sofia@empresa.com</div></div></div></td><td>Marketing</td><td><span class="status-pill s-pending">Pendiente</span></td><td><div class="progress-wrap"><div class="progress-bar-sm"><div class="pf-yellow" style="width:35%;height:100%;border-radius:100px"></div></div><span class="pct">35%</span></div></td><td><span class="day-chip">Día 9</span></td><td style="color:var(--muted);font-size:0.8rem">25 Feb</td><td><button class="action-btn">Ver →</button></td></tr>
+            <tr><td><div class="emp-name-cell"><div class="av av4">CF</div><div class="emp-info"><div class="n">Carlos Flores</div><div class="e">carlos@empresa.com</div></div></div></td><td>Ventas</td><td><span class="status-pill s-risk">En riesgo</span></td><td><div class="progress-wrap"><div class="progress-bar-sm"><div class="pf-red" style="width:18%;height:100%;border-radius:100px"></div></div><span class="pct">18%</span></div></td><td><span class="day-chip">Día 12</span></td><td style="color:var(--muted);font-size:0.8rem">22 Feb</td><td><button class="action-btn">Ver →</button></td></tr>
+            <tr><td><div class="emp-name-cell"><div class="av av5">PV</div><div class="emp-info"><div class="n">Paula Vera</div><div class="e">paula@empresa.com</div></div></div></td><td>Finanzas</td><td><span class="status-pill s-active">Activo</span></td><td><div class="progress-wrap"><div class="progress-bar-sm"><div class="pf-green" style="width:95%;height:100%;border-radius:100px"></div></div><span class="pct">95%</span></div></td><td><span class="day-chip">Día 2</span></td><td style="color:var(--muted);font-size:0.8rem">03 Mar</td><td><button class="action-btn">Ver →</button></td></tr>
+            <tr><td><div class="emp-name-cell"><div class="av av6">RD</div><div class="emp-info"><div class="n">Roberto Díaz</div><div class="e">roberto@empresa.com</div></div></div></td><td>Producto</td><td><span class="status-pill s-active">Activo</span></td><td><div class="progress-wrap"><div class="progress-bar-sm"><div class="pf-green" style="width:70%;height:100%;border-radius:100px"></div></div><span class="pct">70%</span></div></td><td><span class="day-chip">Día 5</span></td><td style="color:var(--muted);font-size:0.8rem">28 Feb</td><td><button class="action-btn">Ver →</button></td></tr>
+            <tr><td><div class="emp-name-cell"><div class="av av7">LT</div><div class="emp-info"><div class="n">Lucas Torres</div><div class="e">lucas@empresa.com</div></div></div></td><td>Frontend Dev</td><td><span class="status-pill s-pending">Pendiente</span></td><td><div class="progress-wrap"><div class="progress-bar-sm"><div class="pf-yellow" style="width:48%;height:100%;border-radius:100px"></div></div><span class="pct">48%</span></div></td><td><span class="day-chip">Día 6</span></td><td style="color:var(--muted);font-size:0.8rem">27 Feb</td><td><button class="action-btn">Ver →</button></td></tr>
+            <tr><td><div class="emp-name-cell"><div class="av av8">MF</div><div class="emp-info"><div class="n">María Fernández</div><div class="e">maria@empresa.com</div></div></div></td><td>RRHH</td><td><span class="status-pill s-risk">En riesgo</span></td><td><div class="progress-wrap"><div class="progress-bar-sm"><div class="pf-red" style="width:22%;height:100%;border-radius:100px"></div></div><span class="pct">22%</span></div></td><td><span class="day-chip">Día 11</span></td><td style="color:var(--muted);font-size:0.8rem">23 Feb</td><td><button class="action-btn">Ver →</button></td></tr>
+          </tbody>
+        </table>
+        <div class="pagination">
+          <span class="pag-info">Mostrando 8 de 12 empleados</span>
+          <div class="pag-btns">
+            <button class="pag-btn active">1</button>
+            <button class="pag-btn">2</button>
+            <button class="pag-btn">›</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══════════════════════════════
+     FLUJOS
+     ═══════════════════════════════ -->
+<div id="page-flujos" class="page app-page">
+  <main class="main">
+    <div class="topbar">
+      <div class="topbar-left"><h1>Flujos de onboarding</h1><p>6 flujos activos · 3 en borrador</p></div>
+      <div class="topbar-right"><button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()"><span></span><span></span><span></span></button><button class="tb-btn ghost">Importar</button><button class="tb-btn">+ Nuevo flujo</button></div>
+    </div>
+    <div class="content">
+      <div class="pipeline-section">
+        <h3>Pipeline general · Semana actual</h3>
+        <div class="pipeline">
+          <div class="pipe-stage"><div class="pipe-box"><span class="pipe-emoji">📋</span><div class="pipe-name">Pre-onboarding</div><div class="pipe-count">3</div><div class="pipe-label">empleados</div></div></div>
+          <div class="pipe-stage"><div class="pipe-box"><span class="pipe-emoji">👋</span><div class="pipe-name">Bienvenida</div><div class="pipe-count">5</div><div class="pipe-label">empleados</div></div></div>
+          <div class="pipe-stage"><div class="pipe-box"><span class="pipe-emoji">📚</span><div class="pipe-name">Capacitación</div><div class="pipe-count">4</div><div class="pipe-label">empleados</div></div></div>
+          <div class="pipe-stage"><div class="pipe-box"><span class="pipe-emoji">🔗</span><div class="pipe-name">Integración</div><div class="pipe-count">2</div><div class="pipe-label">empleados</div></div></div>
+          <div class="pipe-stage"><div class="pipe-box"><span class="pipe-emoji">✅</span><div class="pipe-name">Completado</div><div class="pipe-count">8</div><div class="pipe-label">este mes</div></div></div>
+        </div>
+      </div>
+      <div class="flows-grid">
+        <div class="flow-card">
+          <div class="flow-card-header"><div><div class="flow-title">Onboarding General</div><div class="flow-sub">Para todos los roles · 14 pasos</div></div><span class="pill p-green">Activo</span></div>
+          <div class="flow-body">
+            <div class="flow-steps">
+              <div class="step-row"><div class="step-dot sd-done">✓</div><span class="step-label">Bienvenida y accesos</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-done">✓</div><span class="step-label">Documentación RRHH</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-active">→</div><span class="step-label">Capacitación inicial</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-pending">4</div><span class="step-label dim">Primera evaluación</span></div>
+            </div>
+            <div class="flow-meta"><span class="flow-count">7 empleados activos</span><span class="pill p-green">Activo</span></div>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-header"><div><div class="flow-title">Tech &amp; Developers</div><div class="flow-sub">Backend, Frontend, DevOps · 18 pasos</div></div><span class="pill p-green">Activo</span></div>
+          <div class="flow-body">
+            <div class="flow-steps">
+              <div class="step-row"><div class="step-dot sd-done">✓</div><span class="step-label">Setup entorno</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-done">✓</div><span class="step-label">Acceso repositorios</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-done">✓</div><span class="step-label">Code review con senior</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-active">→</div><span class="step-label dim">Primera tarea asignada</span></div>
+            </div>
+            <div class="flow-meta"><span class="flow-count">3 empleados activos</span><span class="pill p-green">Activo</span></div>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-header"><div><div class="flow-title">Ventas &amp; Comercial</div><div class="flow-sub">SDR, AE, Ventas · 12 pasos</div></div><span class="pill p-yellow">Revisión</span></div>
+          <div class="flow-body">
+            <div class="flow-steps">
+              <div class="step-row"><div class="step-dot sd-done">✓</div><span class="step-label">Cultura y producto</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-active">→</div><span class="step-label">CRM y herramientas</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-pending">3</div><span class="step-label dim">Shadowing con senior</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-pending">4</div><span class="step-label dim">Primera llamada</span></div>
+            </div>
+            <div class="flow-meta"><span class="flow-count">1 empleado activo</span><span class="pill p-yellow">Revisión</span></div>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-header"><div><div class="flow-title">Pre-onboarding Remoto</div><div class="flow-sub">Antes del primer día · 6 pasos</div></div><span class="pill p-green">Activo</span></div>
+          <div class="flow-body">
+            <div class="flow-steps">
+              <div class="step-row"><div class="step-dot sd-done">✓</div><span class="step-label">Email bienvenida</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-done">✓</div><span class="step-label">Firma de contrato</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-active">→</div><span class="step-label">Setup de equipo</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-pending">4</div><span class="step-label dim">Acceso sistemas</span></div>
+            </div>
+            <div class="flow-meta"><span class="flow-count">3 por comenzar</span><span class="pill p-green">Activo</span></div>
+          </div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-card-header"><div><div class="flow-title">Marketing &amp; Contenido</div><div class="flow-sub">CMO, Social, Copys · 10 pasos</div></div><span class="pill p-blue">Borrador</span></div>
+          <div class="flow-body">
+            <div class="flow-steps">
+              <div class="step-row"><div class="step-dot sd-pending">1</div><span class="step-label dim">Brief de marca</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-pending">2</div><span class="step-label dim">Herramientas creativas</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-pending">3</div><span class="step-label dim">Roadmap de contenido</span></div>
+              <div class="step-connector"></div>
+              <div class="step-row"><div class="step-dot sd-pending">4</div><span class="step-label dim">Primer entregable</span></div>
+            </div>
+            <div class="flow-meta"><span class="flow-count">Sin activar</span><span class="pill p-blue">Borrador</span></div>
+          </div>
+        </div>
+        <div class="flow-card" style="border-style:dashed;opacity:0.5;cursor:pointer" onclick="alert('¡Creá tu flujo personalizado!')">
+          <div class="flow-card-header"><div><div class="flow-title">+ Nuevo flujo</div><div class="flow-sub">Creá un flujo personalizado</div></div></div>
+          <div class="flow-body" style="display:flex;align-items:center;justify-content:center;min-height:100px;font-size:2rem">✚</div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══════════════════════════════
+     ASISTENTE (panel de conversaciones)
+     ═══════════════════════════════ -->
+<div id="page-asistente" class="page app-page" style="overflow:hidden;height:100vh">
+  <div class="main" style="overflow:hidden;display:flex;flex-direction:column;height:100vh">
+    <div class="topbar" style="flex-shrink:0">
+      <div class="topbar-left"><h1>Asistente IA</h1><p>24 conversaciones activas hoy</p></div>
+      <div class="topbar-right"><button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()"><span></span><span></span><span></span></button><button class="tb-btn">+ Nueva conversación</button></div>
+    </div>
+    <div class="ia-layout" style="flex:1;overflow:hidden">
+      <div class="conv-panel">
+        <div class="conv-header">
+          <input class="conv-search" placeholder="🔍 Buscar conversación...">
+        </div>
+        <div class="conv-list">
+          <div class="conv-section-label">Hoy</div>
+          <div class="conv-item active">
+            <div class="ci-top"><span class="ci-name">Ana García<span class="ci-badge"></span></span><span class="ci-time">10:42</span></div>
+            <div class="ci-preview">¿Cuándo me dan los accesos al repo?</div>
+          </div>
+          <div class="conv-item">
+            <div class="ci-top"><span class="ci-name">Paula Vera</span><span class="ci-time">09:15</span></div>
+            <div class="ci-preview">¿Cuál es el período de prueba?</div>
+          </div>
+          <div class="conv-item">
+            <div class="ci-top"><span class="ci-name">Matías Ruiz</span><span class="ci-time">08:50</span></div>
+            <div class="ci-preview">Necesito ayuda con el ambiente...</div>
+          </div>
+          <div class="conv-section-label">Ayer</div>
+          <div class="conv-item">
+            <div class="ci-top"><span class="ci-name">Roberto Díaz</span><span class="ci-time">16:30</span></div>
+            <div class="ci-preview">¿Cómo cargo mis horas?</div>
+          </div>
+          <div class="conv-item">
+            <div class="ci-top"><span class="ci-name">Sofía López</span><span class="ci-time">14:10</span></div>
+            <div class="ci-preview">Beneficios y obra social</div>
+          </div>
+          <div class="conv-item">
+            <div class="ci-top"><span class="ci-name">Lucas Torres</span><span class="ci-time">11:05</span></div>
+            <div class="ci-preview">¿Cuándo se paga el sueldo?</div>
+          </div>
+        </div>
+        <div class="stats-row">
+          <div class="mini-stat"><div class="ms-val">94%</div><div class="ms-lbl">Satisfacción</div></div>
+          <div class="mini-stat"><div class="ms-val">24</div><div class="ms-lbl">Hoy</div></div>
+          <div class="mini-stat"><div class="ms-val">1.2m</div><div class="ms-lbl">Resp. prom.</div></div>
+        </div>
+      </div>
+      <div class="chat-area">
+        <div class="chat-header">
+          <div class="chat-user-info">
+            <div class="chat-av">AG</div>
+            <div><div class="chat-user-name">Ana García</div><div class="chat-user-role">Diseño UX · Día 4 de onboarding</div></div>
+          </div>
+          <div class="chat-meta">
+            <span class="meta-chip">🤖 IA activa</span>
+            <span class="meta-chip">📅 Día 4</span>
+            <button class="resolve-btn">✓ Resolver</button>
+          </div>
+        </div>
+        <div class="chat-messages" id="asistente-messages">
+          <div class="msg bot-msg"><div class="msg-av bot-av">🤖</div><div><div class="msg-bubble">¡Hola Ana! Bienvenida a LaborAr 👋 Soy Aria, tu asistente de onboarding. ¿En qué te puedo ayudar hoy?</div><div class="msg-time">09:00 · Aria</div></div></div>
+          <div class="msg user-msg"><div class="msg-av user-av">AG</div><div><div class="msg-bubble">¿Cuándo me dan los accesos al repositorio de GitHub?</div><div class="msg-time">10:42</div></div></div>
+          <div class="msg bot-msg"><div class="msg-av bot-av">🤖</div><div><div class="msg-bubble">¡Buena pregunta! Los accesos al repositorio los gestiona el equipo de DevOps. Según tu flujo de onboarding, debería estar listo en el Día 5 (mañana). <br><br>Si necesitás acceso urgente, podés escribirle directamente a <strong>devops@empresa.com</strong> o mencionarlo en el canal #tech de Slack.</div><div class="msg-time">10:42 · Aria</div></div></div>
+          <div class="suggested"><button class="sug-btn" onclick="asistenteSend('¿Qué permisos voy a tener?')">¿Qué permisos voy a tener?</button><button class="sug-btn" onclick="asistenteSend('¿Cuál es el proceso de code review?')">¿Code review?</button></div>
+        </div>
+        <div class="chat-input-area">
+          <div class="chat-input-wrap">
+            <textarea class="chat-input" id="asistente-input" placeholder="Escribí un mensaje a Ana..." rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();asistenteSend()}" oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,100)+'px'"></textarea>
+            <button class="send-btn" onclick="asistenteSend()">↑</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     ANALYTICS
+     ═══════════════════════════════ -->
+<div id="page-analytics" class="page app-page">
+  <main class="main">
+    <div class="topbar">
+      <div class="topbar-left"><h1>Analytics</h1><p>Datos actualizados hace 15 min</p></div>
+      <div class="topbar-right"><button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()"><span></span><span></span><span></span></button>
+        <div class="period-tabs"><button class="ptab">7D</button><button class="ptab active">30D</button><button class="ptab">90D</button></div>
+        <button class="tb-btn ghost">Exportar</button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="analytics-kpi">
+        <div class="kpi"><div class="kpi-top"><span class="kpi-label">Tasa de retención 90d</span><span class="kpi-icon">📈</span></div><div class="kpi-value" style="color:var(--accent)">94<span style="font-size:1.2rem">%</span></div><div class="kpi-delta up">↑ +6% vs trimestre anterior</div></div>
+        <div class="kpi"><div class="kpi-top"><span class="kpi-label">NPS empleados nuevos</span><span class="kpi-icon">⭐</span></div><div class="kpi-value">78</div><div class="kpi-delta up">↑ +12 pts</div></div>
+        <div class="kpi"><div class="kpi-top"><span class="kpi-label">Tiempo promedio onboarding</span><span class="kpi-icon">⏱️</span></div><div class="kpi-value">8.2<span style="font-size:1.2rem;color:var(--muted)">d</span></div><div class="kpi-delta up">↓ 5 días menos que antes</div></div>
+        <div class="kpi"><div class="kpi-top"><span class="kpi-label">Consultas resueltas por IA</span><span class="kpi-icon">🤖</span></div><div class="kpi-value">61<span style="font-size:1.2rem;color:var(--muted)">%</span></div><div class="kpi-delta up">↑ Sin intervención humana</div></div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header"><h3>Ingresos por mes</h3><div class="period-tabs"><button class="ptab">6M</button><button class="ptab active">1A</button></div></div>
+          <div class="card-body">
+            <div class="bar-chart">
+              <div class="bc-col"><div class="bc-val">3</div><div class="bc-bar" style="height:30%"></div><div class="bc-lbl">Mar</div></div>
+              <div class="bc-col"><div class="bc-val">5</div><div class="bc-bar" style="height:50%"></div><div class="bc-lbl">Abr</div></div>
+              <div class="bc-col"><div class="bc-val">4</div><div class="bc-bar" style="height:40%"></div><div class="bc-lbl">May</div></div>
+              <div class="bc-col"><div class="bc-val">7</div><div class="bc-bar" style="height:70%"></div><div class="bc-lbl">Jun</div></div>
+              <div class="bc-col"><div class="bc-val">6</div><div class="bc-bar" style="height:60%"></div><div class="bc-lbl">Jul</div></div>
+              <div class="bc-col"><div class="bc-val">9</div><div class="bc-bar" style="height:90%"></div><div class="bc-lbl">Ago</div></div>
+              <div class="bc-col"><div class="bc-val">8</div><div class="bc-bar" style="height:80%"></div><div class="bc-lbl">Sep</div></div>
+              <div class="bc-col"><div class="bc-val">11</div><div class="bc-bar hi" style="height:100%"></div><div class="bc-lbl">Oct</div></div>
+              <div class="bc-col"><div class="bc-val">10</div><div class="bc-bar" style="height:95%"></div><div class="bc-lbl">Nov</div></div>
+              <div class="bc-col"><div class="bc-val">8</div><div class="bc-bar" style="height:80%"></div><div class="bc-lbl">Dic</div></div>
+              <div class="bc-col"><div class="bc-val">12</div><div class="bc-bar" style="height:100%"></div><div class="bc-lbl">Ene</div></div>
+              <div class="bc-col"><div class="bc-val">12</div><div class="bc-bar hi" style="height:100%"></div><div class="bc-lbl">Mar</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><h3>Funnel de onboarding</h3></div>
+          <div class="card-body">
+            <div class="funnel">
+              <div class="funnel-row"><span class="funnel-label">Iniciaron</span><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:100%;background:var(--accent)">47</div></div><span class="funnel-num">47</span></div>
+              <div class="funnel-row"><span class="funnel-label">Semana 1</span><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:85%;background:#00b8ff">40</div></div><span class="funnel-num">40</span></div>
+              <div class="funnel-row"><span class="funnel-label">Semana 2</span><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:72%;background:#3b82f6">34</div></div><span class="funnel-num">34</span></div>
+              <div class="funnel-row"><span class="funnel-label">Mes 1</span><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:55%;background:#8b5cf6">26</div></div><span class="funnel-num">26</span></div>
+              <div class="funnel-row"><span class="funnel-label">90 días</span><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:44%;background:#f59e0b">21</div></div><span class="funnel-num">21</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header"><h3>Actividad diaria (últimas 4 semanas)</h3></div>
+          <div class="card-body">
+            <div class="hm-header">
+              <div class="hm-day">L</div><div class="hm-day">M</div><div class="hm-day">Mi</div>
+              <div class="hm-day">J</div><div class="hm-day">V</div><div class="hm-day">S</div><div class="hm-day">D</div>
+            </div>
+            <div class="heatmap" id="heatmap"></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><h3>Progreso por departamento</h3></div>
+          <div class="card-body">
+            <table class="dept-table">
+              <tr><td>Diseño UX</td><td><div style="display:flex;align-items:center;gap:0.6rem"><div class="dept-bar"><div class="dept-fill" style="width:82%"></div></div><span style="font-size:0.75rem;color:var(--muted)">82%</span></div></td><td style="text-align:right;font-size:0.75rem;color:var(--muted)">3 emp.</td></tr>
+              <tr><td>Backend Dev</td><td><div style="display:flex;align-items:center;gap:0.6rem"><div class="dept-bar"><div class="dept-fill" style="width:75%"></div></div><span style="font-size:0.75rem;color:var(--muted)">75%</span></div></td><td style="text-align:right;font-size:0.75rem;color:var(--muted)">4 emp.</td></tr>
+              <tr><td>Marketing</td><td><div style="display:flex;align-items:center;gap:0.6rem"><div class="dept-bar"><div class="dept-fill" style="width:48%;background:var(--warn)"></div></div><span style="font-size:0.75rem;color:var(--muted)">48%</span></div></td><td style="text-align:right;font-size:0.75rem;color:var(--muted)">2 emp.</td></tr>
+              <tr><td>Ventas</td><td><div style="display:flex;align-items:center;gap:0.6rem"><div class="dept-bar"><div class="dept-fill" style="width:30%;background:var(--red)"></div></div><span style="font-size:0.75rem;color:var(--muted)">30%</span></div></td><td style="text-align:right;font-size:0.75rem;color:var(--muted)">2 emp.</td></tr>
+              <tr><td>Finanzas</td><td><div style="display:flex;align-items:center;gap:0.6rem"><div class="dept-bar"><div class="dept-fill" style="width:95%"></div></div><span style="font-size:0.75rem;color:var(--muted)">95%</span></div></td><td style="text-align:right;font-size:0.75rem;color:var(--muted)">1 emp.</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══════════════════════════════
+     ALERTAS
+     ═══════════════════════════════ -->
+<div id="page-alertas" class="page app-page">
+  <main class="main">
+    <div class="topbar">
+      <div class="topbar-left"><h1>Alertas</h1><p>3 críticas · 4 pendientes</p></div>
+      <div class="topbar-right"><button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()"><span></span><span></span><span></span></button><button class="tb-btn ghost">Configurar alertas</button><button class="tb-btn">Marcar todas leídas</button></div>
+    </div>
+    <div class="content">
+      <div class="section-title">Críticas <span class="cnt">3</span></div>
+      <div class="alert-card crit">
+        <div class="alert-icon-wrap ai-red">🔴</div>
+        <div class="alert-body">
+          <div class="alert-title">Carlos Flores — Sin actividad por 3 días</div>
+          <div class="alert-desc">Está en el Día 12 de onboarding con solo 18% de completitud. Riesgo alto de abandono según el modelo predictivo.</div>
+          <div class="alert-meta"><span class="pill p-red">Alta prioridad</span><span class="alert-time">Hace 2 horas</span></div>
+        </div>
+        <div class="alert-actions"><button class="act-btn primary">Contactar</button><button class="act-btn">Resolver</button></div>
+      </div>
+      <div class="alert-card crit" style="margin-bottom:1rem">
+        <div class="alert-icon-wrap ai-red">⚠️</div>
+        <div class="alert-body">
+          <div class="alert-title">María Fernández — Documentos sin firmar</div>
+          <div class="alert-desc">El contrato y el NDA llevan 5 días sin firma digital. Esto bloquea el avance del flujo legal.</div>
+          <div class="alert-meta"><span class="pill p-red">Bloqueo legal</span><span class="alert-time">Hace 5 horas</span></div>
+        </div>
+        <div class="alert-actions"><button class="act-btn primary">Recordatorio</button><button class="act-btn">Resolver</button></div>
+      </div>
+      <div class="alert-card crit" style="margin-bottom:2rem">
+        <div class="alert-icon-wrap ai-red">🚨</div>
+        <div class="alert-body">
+          <div class="alert-title">Integración Workday — Error de sincronización</div>
+          <div class="alert-desc">Falla en la última sincronización de datos. 3 empleados podrían tener información desactualizada.</div>
+          <div class="alert-meta"><span class="pill p-red">Sistema</span><span class="alert-time">Hace 1 hora</span></div>
+        </div>
+        <div class="alert-actions"><button class="act-btn primary" onclick="navigate('integraciones')">Ver integración</button><button class="act-btn">Ignorar</button></div>
+      </div>
+      <div class="section-title">Advertencias <span class="cnt">4</span></div>
+      <div class="alert-card warn">
+        <div class="alert-icon-wrap ai-yellow">📋</div>
+        <div class="alert-body">
+          <div class="alert-title">Sofía López — Perfil incompleto al 35%</div>
+          <div class="alert-desc">Faltan datos bancarios, foto de perfil y beneficios seleccionados. Lleva 9 días en onboarding.</div>
+          <div class="alert-meta"><span class="pill p-yellow">Media prioridad</span><span class="alert-time">Hace 6 horas</span></div>
+        </div>
+        <div class="alert-actions"><button class="act-btn primary">Recordatorio</button><button class="act-btn">Resolver</button></div>
+      </div>
+      <div class="alert-card warn">
+        <div class="alert-icon-wrap ai-yellow">📅</div>
+        <div class="alert-body">
+          <div class="alert-title">3 empleados inician el lunes</div>
+          <div class="alert-desc">Roberto Jiménez, Camila Torres y Diego Morales. Sus flujos pre-onboarding están pendientes de activar.</div>
+          <div class="alert-meta"><span class="pill p-yellow">Acción requerida</span><span class="alert-time">Ayer</span></div>
+        </div>
+        <div class="alert-actions"><button class="act-btn primary" onclick="navigate('flujos')">Activar flujos</button><button class="act-btn">Más tarde</button></div>
+      </div>
+      <div class="section-title" style="margin-top:1.5rem">Informativas <span class="cnt">2</span></div>
+      <div class="alert-card info">
+        <div class="alert-icon-wrap ai-blue">📊</div>
+        <div class="alert-body">
+          <div class="alert-title">Reporte mensual disponible</div>
+          <div class="alert-desc">El reporte de febrero está listo. 47 empleados procesados, NPS 78, tiempo promedio 8.2 días.</div>
+          <div class="alert-meta"><span class="pill p-blue">Informativo</span><span class="alert-time">Hoy</span></div>
+        </div>
+        <div class="alert-actions"><button class="act-btn primary" onclick="navigate('reportes')">Ver reporte</button><button class="act-btn">Descartar</button></div>
+      </div>
+      <div class="alert-card resolved">
+        <div class="alert-icon-wrap ai-gray">✅</div>
+        <div class="alert-body">
+          <div class="alert-title">Ana García — Módulo de bienvenida completado</div>
+          <div class="alert-desc">Completó el primer módulo con 100%. Tiempo: 45 minutos.</div>
+          <div class="alert-meta"><span class="pill p-gray">Resuelto</span><span class="alert-time">Hace 12 min</span></div>
+        </div>
+        <div class="alert-actions"><button class="act-btn">Ver detalle</button></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══════════════════════════════
+     REPORTES
+     ═══════════════════════════════ -->
+<div id="page-reportes" class="page app-page">
+  <main class="main">
+    <div class="topbar">
+      <div class="topbar-left"><h1>Reportes</h1><p>Generá y descargá reportes del equipo</p></div>
+      <div class="topbar-right"><button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()"><span></span><span></span><span></span></button><button class="tb-btn ghost">Programar</button><button class="tb-btn">+ Nuevo reporte</button></div>
+    </div>
+    <div class="content">
+      <div class="grid-3">
+        <div class="report-card">
+          <div class="rc-top"><div class="rc-icon rc-i1">📊</div><span class="scheduled-badge">📅 Mensual</span></div>
+          <div><div class="rc-title">Reporte de onboarding</div><div class="rc-desc">Completitud, tiempos, estados y métricas de todos los empleados del período.</div></div>
+          <div class="rc-meta"><span class="rc-date">Generado: 01 Mar 2026</span><div class="rc-btns"><button class="rc-btn">Vista previa</button><button class="rc-btn dl">Descargar</button></div></div>
+        </div>
+        <div class="report-card">
+          <div class="rc-top"><div class="rc-icon rc-i2">📈</div></div>
+          <div><div class="rc-title">Analytics ejecutivo</div><div class="rc-desc">KPIs de retención, NPS, tasa de abandono y comparativa trimestral para C-level.</div></div>
+          <div class="rc-meta"><span class="rc-date">Generado: 28 Feb 2026</span><div class="rc-btns"><button class="rc-btn">Vista previa</button><button class="rc-btn dl">Descargar</button></div></div>
+        </div>
+        <div class="report-card">
+          <div class="rc-top"><div class="rc-icon rc-i3">⚠️</div><span class="scheduled-badge">📅 Semanal</span></div>
+          <div><div class="rc-title">Riesgo de renuncia</div><div class="rc-desc">Empleados con señales de riesgo, score predictivo y acciones recomendadas.</div></div>
+          <div class="rc-meta"><span class="rc-date">Generado: 05 Mar 2026</span><div class="rc-btns"><button class="rc-btn">Vista previa</button><button class="rc-btn dl">Descargar</button></div></div>
+        </div>
+        <div class="report-card">
+          <div class="rc-top"><div class="rc-icon rc-i4">🤖</div></div>
+          <div><div class="rc-title">Uso del asistente IA</div><div class="rc-desc">Conversaciones, temas más frecuentes, satisfacción y derivaciones a humanos.</div></div>
+          <div class="rc-meta"><span class="rc-date">Generado: 03 Mar 2026</span><div class="rc-btns"><button class="rc-btn">Vista previa</button><button class="rc-btn dl">Descargar</button></div></div>
+        </div>
+        <div class="report-card">
+          <div class="rc-top"><div class="rc-icon rc-i5">👥</div></div>
+          <div><div class="rc-title">Por departamento</div><div class="rc-desc">Comparativa de progreso, tiempos y retención por área y manager responsable.</div></div>
+          <div class="rc-meta"><span class="rc-date">Generado: 01 Mar 2026</span><div class="rc-btns"><button class="rc-btn">Vista previa</button><button class="rc-btn dl">Descargar</button></div></div>
+        </div>
+        <div class="report-card" style="border-style:dashed;opacity:0.5;cursor:pointer">
+          <div class="rc-top"><div class="rc-icon" style="background:var(--surface2);font-size:1.3rem;border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center">+</div></div>
+          <div><div class="rc-title">Reporte personalizado</div><div class="rc-desc">Creá un reporte con las métricas que más te importan.</div></div>
+          <div class="rc-meta"><span class="rc-date">Configurar →</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Reportes recientes</h3></div>
+        <div class="recent-item"><div class="ri-icon rc-i1">📊</div><div><div class="ri-name">Onboarding Febrero 2026.pdf</div><div class="ri-type">Reporte mensual</div></div><span class="ri-size">2.4 MB</span><span class="ri-date">01 Mar 2026</span></div>
+        <div class="recent-item"><div class="ri-icon rc-i5">👥</div><div><div class="ri-name">Riesgo semana 9.xlsx</div><div class="ri-type">Riesgo de renuncia</div></div><span class="ri-size">890 KB</span><span class="ri-date">28 Feb 2026</span></div>
+        <div class="recent-item"><div class="ri-icon rc-i2">📈</div><div><div class="ri-name">Ejecutivo Q4 2025.pdf</div><div class="ri-type">Analytics ejecutivo</div></div><span class="ri-size">4.1 MB</span><span class="ri-date">31 Dic 2025</span></div>
+        <div class="recent-item"><div class="ri-icon rc-i4">🤖</div><div><div class="ri-name">IA febrero.csv</div><div class="ri-type">Uso del asistente</div></div><span class="ri-size">340 KB</span><span class="ri-date">01 Mar 2026</span></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══════════════════════════════
+     INTEGRACIONES
+     ═══════════════════════════════ -->
+<div id="page-integraciones" class="page app-page">
+  <main class="main">
+    <div class="topbar">
+      <div class="topbar-left"><h1>Integraciones</h1><p>5 conectadas · 1 con error</p></div>
+      <div class="topbar-right"><button class="menu-toggle" id="menu-toggle" onclick="toggleSidebar()"><span></span><span></span><span></span></button><button class="tb-btn">+ Nueva integración</button></div>
+    </div>
+    <div class="content">
+      <div class="int-section-title">Conectadas</div>
+      <div class="int-grid">
+        <div class="int-card">
+          <div class="int-card-top"><div class="int-logo">📊</div><div class="int-status is-connected">Conectado</div></div>
+          <div class="sync-info"><div class="sync-dot"></div>Sincronizado hace 2 minutos</div>
+          <div class="int-name">Workday</div>
+          <div class="int-desc">Sistema de RRHH principal. Sincroniza empleados, datos de nómina y estructura organizacional.</div>
+          <div class="int-meta">Última sync: 06 Mar · 47 empleados · 0 errores</div>
+          <div class="int-actions"><button class="int-btn">Configurar</button><button class="int-btn danger">Desconectar</button></div>
+        </div>
+        <div class="int-card">
+          <div class="int-card-top"><div class="int-logo">🔍</div><div class="int-status is-error">Error de sync</div></div>
+          <div class="int-name">SAP SuccessFactors</div>
+          <div class="int-desc">Conecta con módulos de Performance, Learning y Recruitment de SAP para datos enriquecidos.</div>
+          <div class="int-meta" style="color:var(--red)">⚠️ Error: Token expirado hace 3h</div>
+          <div class="int-actions"><button class="int-btn primary">Reconectar</button><button class="int-btn">Ver logs</button></div>
+        </div>
+        <div class="int-card">
+          <div class="int-card-top"><div class="int-logo">🟢</div><div class="int-status is-connected">Conectado</div></div>
+          <div class="sync-info"><div class="sync-dot"></div>En tiempo real</div>
+          <div class="int-name">Google Workspace</div>
+          <div class="int-desc">Crea cuentas de Gmail, Drive y Calendar automáticamente al incorporar un nuevo empleado.</div>
+          <div class="int-meta">12 cuentas creadas este mes · 0 errores</div>
+          <div class="int-actions"><button class="int-btn">Configurar</button><button class="int-btn danger">Desconectar</button></div>
+        </div>
+        <div class="int-card">
+          <div class="int-card-top"><div class="int-logo">💬</div><div class="int-status is-connected">Conectado</div></div>
+          <div class="sync-info"><div class="sync-dot"></div>Sincronizado</div>
+          <div class="int-name">Slack</div>
+          <div class="int-desc">Invita automáticamente a los canales correctos según rol. Envía notificaciones de hitos.</div>
+          <div class="int-meta">Webhook activo · 24 mensajes enviados hoy</div>
+          <div class="int-actions"><button class="int-btn">Configurar</button><button class="int-btn danger">Desconectar</button></div>
+        </div>
+        <div class="int-card">
+          <div class="int-card-top"><div class="int-logo">✍️</div><div class="int-status is-connected">Conectado</div></div>
+          <div class="sync-info"><div class="sync-dot"></div>Activo</div>
+          <div class="int-name">DocuSign</div>
+          <div class="int-desc">Firma digital de contratos, NDAs y documentos legales con validez en LATAM.</div>
+          <div class="int-meta">8 documentos firmados este mes</div>
+          <div class="int-actions"><button class="int-btn">Configurar</button><button class="int-btn danger">Desconectar</button></div>
+        </div>
+      </div>
+      <div class="int-section-title">Disponibles para conectar</div>
+      <div class="int-grid">
+        <div class="int-card">
+          <div class="int-card-top"><div class="int-logo">🐼</div><div class="int-status is-inactive">No conectado</div></div>
+          <div class="int-name">BambooHR</div>
+          <div class="int-desc">Alternativa a Workday para empresas medianas. Incluye módulo de onboarding nativo.</div>
+          <div class="int-actions"><button class="int-btn connect">Conectar</button></div>
+        </div>
+        <div class="int-card">
+          <div class="int-card-top"><div class="int-logo">🔷</div><div class="int-status is-inactive">No conectado</div></div>
+          <div class="int-name">Microsoft 365</div>
+          <div class="int-desc">Crea cuentas de Outlook, Teams y SharePoint al iniciar el onboarding.</div>
+          <div class="int-actions"><button class="int-btn connect">Conectar</button></div>
+        </div>
+        <div class="int-card">
+          <div class="int-card-top"><div class="int-logo">🔗</div><div class="int-status is-inactive">No conectado</div></div>
+          <div class="int-name">API REST propia</div>
+          <div class="int-desc">Conectá cualquier sistema interno con nuestra API REST documentada.</div>
+          <div class="int-actions"><button class="int-btn connect" onclick="navigate('ajustes')">Configurar</button></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══════════════════════════════
+     AJUSTES
+     ═══════════════════════════════ -->
+<div id="page-ajustes" class="page app-page" style="overflow:hidden;height:100vh">
+  <div class="main" style="display:flex;flex-direction:column;height:100vh;overflow:hidden">
+    <div class="topbar" style="flex-shrink:0">
+      <div class="topbar-left"><h1>Ajustes</h1><p>Configurá tu cuenta y organización</p></div>
+    </div>
+    <div class="settings-layout" style="flex:1;overflow:hidden">
+      <div class="settings-nav">
+        <div class="snav-item active" onclick="settingsTab(this,'org')">🏢 Organización</div>
+        <div class="snav-item" onclick="settingsTab(this,'cuenta')">👤 Mi cuenta</div>
+        <div class="snav-item" onclick="settingsTab(this,'equipo')">👥 Equipo</div>
+        <div class="snav-item" onclick="settingsTab(this,'notif')">🔔 Notificaciones</div>
+        <div class="snav-item" onclick="settingsTab(this,'ia')">🤖 Asistente IA</div>
+        <div class="snav-item" onclick="settingsTab(this,'api')">🔌 API &amp; Webhooks</div>
+        <div class="snav-item" onclick="settingsTab(this,'billing')">💳 Facturación</div>
+      </div>
+      <div class="settings-content" id="settings-content">
+        <div id="st-org">
+          <div class="s-section">
+            <div class="s-section-header"><h3>Información de la organización</h3><p>Datos que se muestran en el portal del empleado</p></div>
+            <div class="s-row"><div><div class="s-label">Logo</div><div class="s-sub">Formatos: PNG, SVG. Máx 500KB</div></div><div class="org-avatar">L</div></div>
+            <div class="s-row"><div><div class="s-label">Nombre de la empresa</div><div class="s-sub">Visible para empleados</div></div><input class="s-input" value="LaborAr Technologies S.A." type="text"></div>
+            <div class="s-row"><div><div class="s-label">País</div></div><select class="s-select"><option>Argentina 🇦🇷</option><option>México 🇲🇽</option><option>Brasil 🇧🇷</option><option>Colombia 🇨🇴</option></select></div>
+            <div class="s-row"><div><div class="s-label">Zona horaria</div></div><select class="s-select"><option>GMT-3 (Buenos Aires)</option><option>GMT-5 (México)</option><option>GMT-5 (Bogotá)</option></select></div>
+            <div class="s-row"><div><div class="s-label">Idioma del portal</div></div><select class="s-select"><option>Español (Argentina)</option><option>Español (México)</option><option>Español neutro</option><option>Português</option></select></div>
+          </div>
+          <div class="s-section">
+            <div class="s-section-header"><h3>Plan actual</h3></div>
+            <div class="s-row"><div><div class="s-label">Plan</div><div class="s-sub">Renovación: 01 Abril 2026</div></div><span class="plan-badge">Growth · $799/mes</span></div>
+            <div class="s-row"><div><div class="s-label">Empleados usados</div><div class="s-sub">Límite: 500</div></div><span style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:700">12 / 500</span></div>
+            <div class="s-row"><div><div class="s-label">Cambiar plan</div></div><button class="tb-btn" onclick="navigate('contacto')">Ver planes →</button></div>
+          </div>
+        </div>
+        <div id="st-cuenta" style="display:none">
+          <div class="s-section">
+            <div class="s-section-header"><h3>Mi cuenta</h3><p>Información personal y acceso</p></div>
+            <div class="s-row"><div><div class="s-label">Nombre completo</div></div><input class="s-input" value="Laura Méndez" type="text"></div>
+            <div class="s-row"><div><div class="s-label">Email</div></div><input class="s-input" value="laura@laborar.com" type="text"></div>
+            <div class="s-row"><div><div class="s-label">Rol</div></div><select class="s-select"><option>HR Manager</option><option>Admin</option><option>Viewer</option></select></div>
+            <div class="s-row"><div><div class="s-label">Contraseña</div><div class="s-sub">Última modificación: hace 45 días</div></div><button class="action-btn">Cambiar contraseña</button></div>
+          </div>
+        </div>
+        <div id="st-equipo" style="display:none">
+          <div class="s-section">
+            <div class="s-section-header"><h3>Miembros del equipo</h3><p>4 miembros · 1 pendiente de invitación</p></div>
+            <div class="member-row"><div class="mem-av mem-av1">LM</div><div class="mem-info"><div class="n">Laura Méndez</div><div class="e">laura@laborar.com</div></div><span class="role-badge rb-admin">Admin</span><button class="action-btn" style="margin-left:auto">Editar</button></div>
+            <div class="member-row"><div class="mem-av mem-av2">JR</div><div class="mem-info"><div class="n">Javier Romero</div><div class="e">javier@laborar.com</div></div><span class="role-badge rb-manager">Manager</span><button class="action-btn" style="margin-left:auto">Editar</button></div>
+            <div class="member-row"><div class="mem-av mem-av3">VG</div><div class="mem-info"><div class="n">Valentina González</div><div class="e">vale@laborar.com</div></div><span class="role-badge rb-manager">Manager</span><button class="action-btn" style="margin-left:auto">Editar</button></div>
+            <div class="member-row"><div class="mem-av mem-av4">PC</div><div class="mem-info"><div class="n">Pedro Castro</div><div class="e">pedro@laborar.com</div></div><span class="role-badge rb-viewer">Viewer</span><button class="action-btn" style="margin-left:auto">Editar</button></div>
+            <div class="s-row" style="padding:1.2rem 1.5rem"><div><div class="s-label">Invitar miembro</div></div><div style="display:flex;gap:0.5rem"><input class="s-input" placeholder="email@empresa.com" type="text" style="min-width:200px"><button class="tb-btn">Invitar</button></div></div>
+          </div>
+        </div>
+        <div id="st-notif" style="display:none">
+          <div class="s-section">
+            <div class="s-section-header"><h3>Notificaciones</h3><p>Controlá cuándo y cómo recibís alertas</p></div>
+            <div class="s-row"><div><div class="s-label">Riesgo de renuncia</div><div class="s-sub">Cuando el modelo detecta señales de alerta</div></div><div class="toggle on" onclick="this.classList.toggle('on')"></div></div>
+            <div class="s-row"><div><div class="s-label">Empleado sin actividad</div><div class="s-sub">Después de N días sin acceso</div></div><div class="toggle on" onclick="this.classList.toggle('on')"></div></div>
+            <div class="s-row"><div><div class="s-label">Nuevo empleado incorporado</div><div class="s-sub">Desde integraciones externas</div></div><div class="toggle on" onclick="this.classList.toggle('on')"></div></div>
+            <div class="s-row"><div><div class="s-label">Reporte semanal</div><div class="s-sub">Resumen los lunes a las 9am</div></div><div class="toggle on" onclick="this.classList.toggle('on')"></div></div>
+            <div class="s-row"><div><div class="s-label">Actualizaciones del producto</div><div class="s-sub">Novedades y mejoras de LaborAr</div></div><div class="toggle" onclick="this.classList.toggle('on')"></div></div>
+          </div>
+        </div>
+        <div id="st-ia" style="display:none">
+          <div class="s-section">
+            <div class="s-section-header"><h3>Asistente IA · Aria</h3><p>Configurá el comportamiento del asistente</p></div>
+            <div class="s-row"><div><div class="s-label">Nombre del asistente</div><div class="s-sub">Visible para los empleados</div></div><input class="s-input" value="Aria" type="text"></div>
+            <div class="s-row"><div><div class="s-label">Idioma por defecto</div></div><select class="s-select"><option>Español (Argentina)</option><option>Español (México)</option><option>Español neutro</option></select></div>
+            <div class="s-row"><div><div class="s-label">Modo de respuesta</div><div class="s-sub">Cuándo transferir a humano</div></div><select class="s-select"><option>Automático</option><option>Solo si el empleado pide</option><option>Siempre humano</option></select></div>
+            <div class="s-row"><div><div class="s-label">API Key de Groq</div><div class="s-sub">Para respuestas con LLaMA 3.3</div></div><input class="s-input" placeholder="gsk_..." type="password"></div>
+            <div class="s-row"><div><div class="s-label">Asistente activo</div><div class="s-sub">Los empleados pueden usarlo</div></div><div class="toggle on" onclick="this.classList.toggle('on')"></div></div>
+          </div>
+        </div>
+        <div id="st-api" style="display:none">
+          <div class="s-section">
+            <div class="s-section-header"><h3>API &amp; Webhooks</h3><p>Integrá LaborAr con tus sistemas</p></div>
+            <div class="s-row"><div><div class="s-label">API Key</div><div class="s-sub">No compartas esta clave</div></div><input class="s-input" value="sk_live_•••••••••••••••••••••••" type="password"></div>
+            <div class="s-row"><div><div class="s-label">Webhook URL</div><div class="s-sub">Para eventos en tiempo real</div></div><input class="s-input" placeholder="https://tu-sistema.com/webhook" type="text"></div>
+            <div class="s-row"><div><div class="s-label">Documentación</div></div><button class="action-btn">Ver docs →</button></div>
+          </div>
+        </div>
+        <div id="st-billing" style="display:none">
+          <div class="s-section">
+            <div class="s-section-header"><h3>Facturación</h3></div>
+            <div class="s-row"><div><div class="s-label">Plan actual</div></div><span class="plan-badge">Growth · $799/mes</span></div>
+            <div class="s-row"><div><div class="s-label">Próximo cobro</div><div class="s-sub">01 de Abril de 2026</div></div><span style="font-family:'Syne',sans-serif;font-weight:700">$799 USD</span></div>
+            <div class="s-row"><div><div class="s-label">Método de pago</div><div class="s-sub">Visa •••• 4242</div></div><button class="action-btn">Actualizar</button></div>
+            <div class="s-row"><div><div class="s-label">Historial de facturas</div></div><button class="action-btn">Descargar →</button></div>
+            <div class="s-row"><div><div class="s-label">Cancelar suscripción</div><div class="s-sub">Tus datos se conservan 30 días</div></div><button class="danger-btn">Cancelar plan</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     AGENTE IA (público)
+     ═══════════════════════════════ -->
+<div id="page-agente" class="page landing-style">
+  <div class="agent-page">
+    <div class="agent-nav">
+      <div class="agent-nav-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
+      <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:var(--muted)">
+        <span class="agent-status-dot"></span> Aria online
+      </div>
+      <div style="display:flex;gap:0.6rem">
+        <button class="act-ct-btn" onclick="navigate('dashboard')">Ir al dashboard</button>
+        <button class="act-ct-btn" onclick="navigate('contacto')">Contacto</button>
+      </div>
+    </div>
+    <div class="api-banner" id="apiBanner">
+      ⚡ Modo demo activo.
+      <input id="apiKeyInput" placeholder="Pegá tu Groq API Key (gsk_...) para activar IA real" type="password">
+      <button class="api-save-btn" onclick="saveApiKey()">Activar IA →</button>
+    </div>
+    <div class="api-ok" id="apiOk">
+      ✅ LLaMA 3.3 (Groq) activado — respuestas ultrarrápidas
+    </div>
+    <div class="agent-layout">
+      <div class="agent-sidebar">
+        <div class="agent-profile-box">
+          <div class="agent-av">🤖</div>
+          <div class="agent-av-name">Aria</div>
+          <div class="agent-av-desc">Asistente de ventas LaborAr. Respondé preguntas, agendá demos y captá leads.</div>
+          <div class="cap-tags">
+            <span class="cap-tag">Precios</span>
+            <span class="cap-tag">Demos</span>
+            <span class="cap-tag">Integraciones</span>
+            <span class="cap-tag">Trial</span>
+          </div>
+        </div>
+        <div class="agent-sidebar-sec">Temas rápidos</div>
+        <div class="quick-topics">
+          <div class="qt-item" onclick="agenteSend('¿Qué hace LaborAr?')"><span class="qi">🚀</span> ¿Qué hace LaborAr?</div>
+          <div class="qt-item" onclick="agenteSend('¿Cuánto cuesta LaborAr?')"><span class="qi">💰</span> Precios y planes</div>
+          <div class="qt-item" onclick="agenteSend('Quiero una prueba gratuita')"><span class="qi">🎁</span> Trial gratuito</div>
+          <div class="qt-item" onclick="agenteSend('¿Con qué sistemas se integra?')"><span class="qi">🔌</span> Integraciones</div>
+          <div class="qt-item" onclick="agenteSend('¿Es seguro guardar mis datos en LaborAr?')"><span class="qi">🔒</span> Seguridad</div>
+          <div class="qt-item" onclick="agenteSend('Quiero hablar con un humano')"><span class="qi">👤</span> Hablar con ventas</div>
+        </div>
+        <div class="agent-sidebar-sec">Captura de lead</div>
+        <div class="lead-form-box">
+          <div id="leadFormSection">
+            <h4>¿Quién sos?</h4>
+            <input class="lf-input" id="leadName" placeholder="Tu nombre">
+            <input class="lf-input" id="leadEmail" placeholder="Email corporativo">
+            <input class="lf-input" id="leadCompany" placeholder="Empresa (opcional)">
+            <button class="lf-btn" onclick="saveLead()">Guardar y continuar →</button>
+          </div>
+          <div class="lead-saved" id="leadSavedMsg">✅ ¡Perfecto! Ya sé quién sos.</div>
+        </div>
+        <div class="agent-sidebar-sec">Agendá una demo</div>
+        <div class="demo-scheduler-box">
+          <h4>Elegí un horario</h4>
+          <div class="time-slots">
+            <div class="slot" onclick="selectSlot(this)">Lun 10<br>09:00</div>
+            <div class="slot" onclick="selectSlot(this)">Lun 10<br>15:00</div>
+            <div class="slot taken">Mar 11<br>10:00</div>
+            <div class="slot" onclick="selectSlot(this)">Mar 11<br>16:00</div>
+            <div class="slot" onclick="selectSlot(this)">Mié 12<br>11:00</div>
+            <div class="slot taken">Jue 13<br>09:00</div>
+          </div>
+          <button class="demo-confirm-btn" onclick="confirmDemo()">Confirmar demo →</button>
+        </div>
+        <div class="agent-stats-grid">
+          <div class="ast"><div class="ast-val">2.4s</div><div class="ast-lbl">Resp. prom.</div></div>
+          <div class="ast"><div class="ast-val">94%</div><div class="ast-lbl">Satisfacción</div></div>
+          <div class="ast"><div class="ast-val">847</div><div class="ast-lbl">Consultas</div></div>
+          <div class="ast"><div class="ast-val" id="aiMode">Demo</div><div class="ast-lbl">Modo</div></div>
+        </div>
+      </div>
+      <div class="agent-chat-main">
+        <div class="agent-chat-topbar">
+          <div class="act-left">
+            <div class="act-mini-av">🤖</div>
+            <div><div class="act-name">Aria — LaborAr</div><div class="act-sub" id="aiStatus">Demo activo · Respuestas predefinidas</div></div>
+          </div>
+          <div class="act-actions">
+            <button class="act-ct-btn" onclick="clearChat()">Nueva conversación</button>
+            <button class="act-ct-btn danger" onclick="agentTransferHuman()">Hablar con humano</button>
+          </div>
+        </div>
+        <div class="agent-messages" id="agente-messages">
+          <div class="agent-welcome" id="agente-welcome">
+            <div class="aw-icon">🤖</div>
+            <div class="aw-title">Hola, soy <span style="color:var(--accent)">Aria</span></div>
+            <div class="aw-sub">Soy el agente de LaborAr. Puedo responder preguntas, mostrarte precios, ayudarte a agendar una demo o conectarte con el equipo.</div>
+            <div class="aw-suggestions">
+              <button class="aw-sug" onclick="agenteSend('¿Qué hace exactamente LaborAr?')"><span class="aw-sug-icon">🚀</span><strong>¿Qué es LaborAr?</strong><span class="aw-sug-text">Conocé la plataforma</span></button>
+              <button class="aw-sug" onclick="agenteSend('¿Cuánto cuesta LaborAr?')"><span class="aw-sug-icon">💰</span><strong>Ver precios</strong><span class="aw-sug-text">Planes y costos</span></button>
+              <button class="aw-sug" onclick="agenteSend('Quiero agendar una demo de LaborAr')"><span class="aw-sug-icon">📅</span><strong>Agendar demo</strong><span class="aw-sug-text">30 min, sin costo</span></button>
+              <button class="aw-sug" onclick="agenteSend('¿Puedo hacer una prueba gratuita?')"><span class="aw-sug-icon">🎁</span><strong>Prueba gratis</strong><span class="aw-sug-text">14 días sin tarjeta</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="agent-input-area">
+          <div class="agent-input-wrap">
+            <textarea class="agent-chat-input" id="agente-input" placeholder="Escribile a Aria..." rows="1"
+              onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();agenteSend()}"
+              oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,120)+'px'"></textarea>
+            <button class="agent-send-btn" id="agente-sendBtn" onclick="agenteSend()">↑</button>
+          </div>
+          <div class="input-hint">Enter para enviar · Shift+Enter para nueva línea · <span id="agente-mode-hint">Modo demo</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     CONTACTO
+     ═══════════════════════════════ -->
+<div id="page-contacto" class="page landing-style">
+  <nav class="pub-nav">
+    <div class="pub-nav-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
+    <span class="pub-nav-back" onclick="navigate('landing')">← Volver al inicio</span>
+    <button class="nav-cta" onclick="navigate('dashboard')">Ir al dashboard</button>
+  </nav>
+  <div class="pub-inner-hero">
+    <div class="page-tag">Contacto</div>
+    <h1 class="page-h1">¿Cómo podemos <em>ayudarte</em>?</h1>
+    <p class="lead">Nuestro equipo responde en menos de 2 horas hábiles. También podés agendar una demo directamente.</p>
+  </div>
+  <div class="contact-layout">
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="cc-top"><div class="cc-icon ci1">💬</div><div><div class="cc-title">Chat con Aria <span class="cc-badge badge-green">Online</span></div><div class="cc-sub">Asistente IA · Disponible 24/7</div></div></div>
+        <div class="cc-body">Nuestro agente de IA responde en segundos. Preguntas, precios, demos y más.</div>
+        <a class="cc-link" onclick="navigate('agente')">Hablar con Aria →</a>
+      </div>
+      <div class="contact-card">
+        <div class="cc-top"><div class="cc-icon ci2">📅</div><div><div class="cc-title">Demo personalizada <span class="cc-badge badge-blue">Gratis</span></div><div class="cc-sub">30 minutos · Adaptada a tu empresa</div></div></div>
+        <div class="cc-body">Mostramos LaborAr con tus datos y casos de uso reales. Sin compromiso.</div>
+        <a class="cc-link" onclick="navigate('agente')">Agendar demo →</a>
+      </div>
+      <div class="contact-card">
+        <div class="cc-top"><div class="cc-icon ci3">📧</div><div><div class="cc-title">Email de ventas</div><div class="cc-sub">Respuesta en &lt;2 horas hábiles</div></div></div>
+        <div class="cc-body">Para consultas de precio, contratos y planes enterprise.</div>
+        <a class="cc-link" href="mailto:ventas@laborar.com">ventas@laborar.com →</a>
+      </div>
+      <div class="contact-card">
+        <div class="cc-top"><div class="cc-icon ci4">🛠️</div><div><div class="cc-title">Soporte técnico</div><div class="cc-sub">Para clientes activos</div></div></div>
+        <div class="cc-body">Integraciones, errores de configuración y preguntas técnicas.</div>
+        <a class="cc-link" href="mailto:soporte@laborar.com">soporte@laborar.com →</a>
+      </div>
+    </div>
+    <div class="form-card">
+      <h3>Escribinos</h3>
+      <p class="form-sub">Te respondemos en menos de 2 horas hábiles.</p>
+      <div class="form-row">
+        <div><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+        <div><label>Empresa</label><input type="text" placeholder="Nombre de la empresa"></div>
+      </div>
+      <div class="form-group"><label>Email</label><input type="email" placeholder="tu@empresa.com"></div>
+      <div class="form-group"><label>Asunto</label>
+        <select>
+          <option>Quiero una demo</option>
+          <option>Consulta de precios</option>
+          <option>Soporte técnico</option>
+          <option>Plan Enterprise</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Mensaje</label><textarea placeholder="Contanos sobre tu empresa y qué necesitás..."></textarea></div>
+      <button class="submit-btn">Enviar mensaje ↗</button>
+      <p class="form-note">Al enviar este formulario aceptás nuestra <a onclick="navigate('privacidad')" style="color:var(--accent);cursor:pointer">política de privacidad</a>.</p>
+    </div>
+  </div>
+  <div class="faq-section">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Cuánto tarda implementar LaborAr?<span class="faq-icon">+</span></div><div class="faq-a">La implementación básica tarda entre 24 y 48 horas. La integración con sistemas como Workday o SAP puede tomar entre 2 y 5 días adicionales dependiendo de la complejidad.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Necesito saber programar para usar LaborAr?<span class="faq-icon">+</span></div><div class="faq-a">No. LaborAr está diseñado para equipos de RRHH sin conocimientos técnicos. Los flujos se arman visualmente con drag & drop y las integraciones tienen conectores nativos.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Qué pasa con mis datos si cancelo?<span class="faq-icon">+</span></div><div class="faq-a">Tus datos se conservan por 30 días después de la cancelación. Podés exportar todo en formato CSV o JSON en cualquier momento, antes y después de cancelar.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿El asistente IA habla solo de mi empresa o de cualquier cosa?<span class="faq-icon">+</span></div><div class="faq-a">Aria está entrenada exclusivamente con la información de tu empresa: políticas, beneficios, procesos y FAQs. No responde temas fuera de ese contexto, manteniéndola 100% on-topic.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">¿Hay un mínimo de empleados para contratar?<span class="faq-icon">+</span></div><div class="faq-a">No. LaborAr funciona desde 1 empleado. Los planes escalan según el volumen que tengas, sin cargos mínimos ni penalidades por uso bajo.</div></div>
+  </div>
+  <footer class="pub-footer">
+    <div class="f-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
+    <p>© 2026 LaborAr. Hecho con ❤️ en Argentina.</p>
+    <div class="f-links"><a onclick="navigate('terminos')">Términos</a><a onclick="navigate('privacidad')">Privacidad</a></div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════
+     TÉRMINOS
+     ═══════════════════════════════ -->
+<div id="page-terminos" class="page landing-style">
+  <nav class="pub-nav">
+    <div class="pub-nav-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
+    <span class="pub-nav-back" onclick="history.back()">← Volver</span>
+    <button class="nav-cta" onclick="navigate('contacto')">Contacto</button>
+  </nav>
+  <div class="pub-inner-hero left" style="max-width:900px;margin:0 auto">
+    <div class="page-tag">Legal</div>
+    <h1 class="page-h1">Términos y <em>Condiciones</em></h1>
+    <p class="lead">Al usar LaborAr, aceptás estos términos. Leelos con calma.</p>
+    <p class="updated">Última actualización: 01 de enero de 2026 · Versión 3.2</p>
+  </div>
+  <div class="legal-content">
+    <div class="toc">
+      <h4>Tabla de contenidos</h4>
+      <ol>
+        <li><a onclick="document.getElementById('t1').scrollIntoView({behavior:'smooth'})">Aceptación de los términos</a></li>
+        <li><a onclick="document.getElementById('t2').scrollIntoView({behavior:'smooth'})">Descripción del servicio</a></li>
+        <li><a onclick="document.getElementById('t3').scrollIntoView({behavior:'smooth'})">Registro y cuenta</a></li>
+        <li><a onclick="document.getElementById('t4').scrollIntoView({behavior:'smooth'})">Uso aceptable</a></li>
+        <li><a onclick="document.getElementById('t5').scrollIntoView({behavior:'smooth'})">Propiedad intelectual</a></li>
+        <li><a onclick="document.getElementById('t6').scrollIntoView({behavior:'smooth'})">Pagos y facturación</a></li>
+        <li><a onclick="document.getElementById('t7').scrollIntoView({behavior:'smooth'})">Limitación de responsabilidad</a></li>
+        <li><a onclick="document.getElementById('t8').scrollIntoView({behavior:'smooth'})">Ley aplicable</a></li>
+      </ol>
+    </div>
+    <div class="doc-section" id="t1"><h2><span class="num">01</span> Aceptación de los términos</h2><p>Al acceder y utilizar la plataforma LaborAr, desarrollada y operada por LaborAr Technologies S.A. (en adelante "LaborAr"), declarás haber leído, comprendido y aceptado los presentes Términos y Condiciones.</p><div class="highlight-box"><p>Si actuás en nombre de una organización, declarás tener autorización para aceptar estos términos en su representación. Estos términos son vinculantes para ambas partes desde el momento del registro.</p></div></div>
+    <div class="doc-section" id="t2"><h2><span class="num">02</span> Descripción del servicio</h2><p>LaborAr es una plataforma SaaS de gestión de onboarding de empleados que incluye:</p><ul><li>Portal de bienvenida personalizable por empresa</li><li>Flujos automáticos de tareas, documentos y capacitaciones</li><li>Asistente de inteligencia artificial disponible 24/7</li><li>Analytics y reportes de progreso y retención</li><li>Integraciones con sistemas de RRHH de terceros</li><li>Firma digital de documentos laborales</li></ul><p>LaborAr se reserva el derecho de modificar, suspender o discontinuar funcionalidades con 30 días de aviso previo.</p></div>
+    <div class="doc-section" id="t3"><h2><span class="num">03</span> Registro y cuenta</h2><p>Para acceder al servicio es necesario registrar una cuenta con datos verídicos y actualizados. Sos responsable de mantener la confidencialidad de tus credenciales.</p><ul><li>Cada cuenta es personal e intransferible</li><li>Debés notificarnos inmediatamente ante acceso no autorizado</li><li>LaborAr no será responsable de pérdidas por uso no autorizado de credenciales</li></ul></div>
+    <div class="doc-section" id="t4"><h2><span class="num">04</span> Uso aceptable</h2><p>Te comprometés a usar LaborAr exclusivamente para fines legales y conforme a estos términos. Queda prohibido:</p><ul><li>Usar la plataforma para discriminar o violar derechos laborales</li><li>Intentar acceder a datos de otras organizaciones</li><li>Realizar ingeniería inversa o copiar el software</li><li>Usar el asistente IA para difundir información falsa a empleados</li></ul><div class="warn-box"><p>⚠️ El incumplimiento de estas condiciones puede resultar en la suspensión inmediata de la cuenta sin derecho a reembolso.</p></div></div>
+    <div class="doc-section" id="t5"><h2><span class="num">05</span> Propiedad intelectual</h2><p>LaborAr y todos sus componentes (software, diseño, contenido, modelos de IA) son propiedad exclusiva de LaborAr Technologies S.A. Los datos que cargues en la plataforma son de tu propiedad y podés exportarlos en cualquier momento.</p></div>
+    <div class="doc-section" id="t6"><h2><span class="num">06</span> Pagos y facturación</h2><p>Los pagos se procesan mensualmente o anualmente según el plan elegido. Los precios son en dólares estadounidenses. LaborAr se reserva el derecho de modificar precios con 30 días de aviso.</p><ul><li>Sin reembolsos por meses parciales</li><li>Cancelación efectiva al final del período contratado</li><li>Facturas disponibles en el panel de ajustes</li></ul></div>
+    <div class="doc-section" id="t7"><h2><span class="num">07</span> Limitación de responsabilidad</h2><p>LaborAr no será responsable por daños indirectos, pérdida de datos o lucro cesante derivados del uso o imposibilidad de uso de la plataforma. La responsabilidad máxima de LaborAr se limita al monto pagado en los últimos 3 meses.</p></div>
+    <div class="doc-section" id="t8"><h2><span class="num">08</span> Ley aplicable</h2><p>Estos términos se rigen por la legislación de la República Argentina. Cualquier disputa se someterá a los tribunales ordinarios de la Ciudad Autónoma de Buenos Aires.</p></div>
+  </div>
+  <footer class="pub-footer">
+    <div class="f-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
+    <p>© 2026 LaborAr Technologies S.A.</p>
+    <div class="f-links"><a onclick="navigate('privacidad')">Privacidad</a><a onclick="navigate('contacto')">Contacto</a></div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════
+     PRIVACIDAD
+     ═══════════════════════════════ -->
+<div id="page-privacidad" class="page landing-style">
+  <nav class="pub-nav">
+    <div class="pub-nav-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
+    <span class="pub-nav-back" onclick="history.back()">← Volver</span>
+    <button class="nav-cta" onclick="navigate('contacto')">Contacto</button>
+  </nav>
+  <div class="pub-inner-hero left" style="max-width:900px;margin:0 auto">
+    <div class="page-tag">Legal</div>
+    <h1 class="page-h1">Política de <em>Privacidad</em></h1>
+    <p class="lead">Tus datos y los de tus empleados son sagrados. Así los protegemos.</p>
+    <p class="updated">Última actualización: 01 de enero de 2026</p>
+  </div>
+  <div class="legal-content">
+    <div class="toc">
+      <h4>Tabla de contenidos</h4>
+      <ol>
+        <li><a onclick="document.getElementById('p1').scrollIntoView({behavior:'smooth'})">Datos que recopilamos</a></li>
+        <li><a onclick="document.getElementById('p2').scrollIntoView({behavior:'smooth'})">Cómo usamos tus datos</a></li>
+        <li><a onclick="document.getElementById('p3').scrollIntoView({behavior:'smooth'})">Almacenamiento y seguridad</a></li>
+        <li><a onclick="document.getElementById('p4').scrollIntoView({behavior:'smooth'})">Tus derechos</a></li>
+        <li><a onclick="document.getElementById('p5').scrollIntoView({behavior:'smooth'})">Cookies</a></li>
+        <li><a onclick="document.getElementById('p6').scrollIntoView({behavior:'smooth'})">Contacto del DPO</a></li>
+      </ol>
+    </div>
+    <div class="doc-section" id="p1"><h2><span class="num">01</span> Datos que recopilamos</h2><p>Recopilamos información necesaria para proveer el servicio:</p><ul><li>Datos de registro: nombre, email, empresa, país</li><li>Datos de empleados cargados por el cliente (responsabilidad del cliente)</li><li>Datos de uso: accesos, funciones usadas, tiempos de sesión</li><li>Conversaciones con el asistente IA (para mejorar el servicio)</li><li>Datos técnicos: IP, dispositivo, navegador</li></ul><div class="highlight-box"><p>Nunca vendemos datos a terceros. Nunca. Nuestro modelo de negocio es la suscripción, no los datos.</p></div></div>
+    <div class="doc-section" id="p2"><h2><span class="num">02</span> Cómo usamos tus datos</h2><p>Usamos los datos exclusivamente para:</p><ul><li>Proveer y mejorar el servicio de LaborAr</li><li>Enviarte comunicaciones del servicio (no marketing sin consentimiento)</li><li>Generar analytics agregados y anonimizados del producto</li><li>Cumplir obligaciones legales</li><li>Detectar y prevenir fraude o uso indebido</li></ul></div>
+    <div class="doc-section" id="p3"><h2><span class="num">03</span> Almacenamiento y seguridad</h2><p>Toda la infraestructura de LaborAr opera en AWS São Paulo (sa-east-1) con las siguientes medidas:</p><ul><li>Certificación ISO 27001 del proveedor de infraestructura</li><li>Cifrado TLS 1.3 en tránsito</li><li>Cifrado AES-256 en reposo</li><li>Backups diarios con retención de 30 días</li><li>Acceso con principio de mínimo privilegio</li><li>Auditorías de seguridad trimestrales</li></ul></div>
+    <div class="doc-section" id="p4"><h2><span class="num">04</span> Tus derechos</h2><p>Tenés derecho a acceder, rectificar, eliminar y portar tus datos en cualquier momento desde el panel de ajustes o enviando un email a privacidad@laborar.com.</p><ul><li>Acceso: podés descargar todos tus datos en formato JSON</li><li>Eliminación: eliminamos todos los datos en 30 días</li><li>Portabilidad: exportás en CSV, JSON o XML</li><li>Oposición al tratamiento: podés limitar ciertos usos</li></ul></div>
+    <div class="doc-section" id="p5"><h2><span class="num">05</span> Cookies</h2><p>Usamos cookies estrictamente necesarias para la sesión y funcionalidad del servicio. No usamos cookies de publicidad ni de seguimiento de terceros. Podés controlar las cookies desde tu navegador.</p></div>
+    <div class="doc-section" id="p6"><h2><span class="num">06</span> Contacto del DPO</h2><p>Nuestro Delegado de Protección de Datos está disponible para cualquier consulta:</p><ul><li>Email: privacidad@laborar.com</li><li>Respuesta en máximo 72 horas hábiles</li><li>Cumplimos con la Ley 25.326 (Argentina), GDPR (UE) y LGPD (Brasil)</li></ul></div>
+  </div>
+  <footer class="pub-footer">
+    <div class="f-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
+    <p>© 2026 LaborAr Technologies S.A.</p>
+    <div class="f-links"><a onclick="navigate('terminos')">Términos</a><a onclick="navigate('contacto')">Contacto</a></div>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
