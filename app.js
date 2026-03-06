@@ -57,8 +57,222 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeSidebar();
   });
-  const APP_PAGES = ['dashboard','empleados','flujos','asistente','analytics','alertas','reportes','integraciones','ajustes'];
-  const ALL_PAGES = [...APP_PAGES, 'landing','agente','contacto','terminos','privacidad'];
+  const APP_PAGES  = ['dashboard','empleados','flujos','asistente','analytics','alertas','reportes','integraciones','ajustes'];
+  const AUTH_PAGES = ['login','register','forgot-password','reset-password'];
+  const ALL_PAGES  = [...APP_PAGES, 'landing','agente','contacto','terminos','privacidad',...AUTH_PAGES];
+
+  /* ══════════════════════════════════════════
+     AUTH — Estado y configuración
+     ══════════════════════════════════════════ */
+  const AUTH_URL  = 'http://localhost:3002';
+  let accessToken = null;
+  let currentUser = null;
+
+  function saveToken(t) { accessToken = t; try { sessionStorage.setItem('laborar_access', t); } catch(e){} }
+  function loadToken()  { return accessToken || sessionStorage.getItem('laborar_access') || null; }
+  function clearToken() { accessToken = null; sessionStorage.removeItem('laborar_access'); }
+
+  async function authFetch(path, opts) {
+    opts = opts || {};
+    const token = loadToken();
+    opts.headers = Object.assign({}, opts.headers || {}, { 'Content-Type': 'application/json' });
+    if (token) opts.headers['Authorization'] = 'Bearer ' + token;
+    opts.credentials = 'include';
+    var res = await fetch(AUTH_URL + path, opts);
+    if (res.status === 401 && token) {
+      var rr = await fetch(AUTH_URL + '/auth/refresh', { method:'POST', credentials:'include' });
+      if (rr.ok) {
+        var rd = await rr.json();
+        saveToken(rd.access_token);
+        opts.headers['Authorization'] = 'Bearer ' + rd.access_token;
+        res = await fetch(AUTH_URL + path, opts);
+      }
+    }
+    return res;
+  }
+
+  function updateUserUI(user) {
+    currentUser = user;
+    if (!user) return;
+    var sbName = document.querySelector('.sb-user-info .name');
+    var sbRole = document.querySelector('.sb-user-info .role');
+    var sbAv   = document.querySelector('.sb-avatar');
+    if (sbName) sbName.textContent = user.name || user.email;
+    if (sbRole) sbRole.textContent = user.role || 'Usuario';
+    if (sbAv)   sbAv.textContent   = (user.name || user.email).slice(0,2).toUpperCase();
+  }
+
+  async function checkAuth() {
+    var token = loadToken();
+    if (!token) {
+      try {
+        var rr = await fetch(AUTH_URL + '/auth/refresh', { method:'POST', credentials:'include' });
+        if (rr.ok) {
+          var rd = await rr.json();
+          saveToken(rd.access_token);
+          var me = await authFetch('/auth/me');
+          if (me.ok) { var d = await me.json(); updateUserUI(d.user); return d.user; }
+        }
+      } catch(e) {}
+      return null;
+    }
+    try {
+      var me = await authFetch('/auth/me');
+      if (me.ok) { var d = await me.json(); updateUserUI(d.user); return d.user; }
+      clearToken();
+    } catch(e) {}
+    return null;
+  }
+
+  function handleGoogleCallback() {
+    var params = new URLSearchParams(window.location.hash.replace(/^#[^?]*\?/, ''));
+    var token  = params.get('token');
+    if (token) {
+      saveToken(token);
+      authFetch('/auth/me').then(function(r){ return r.json(); }).then(function(d){
+        if (d.user) { updateUserUI(d.user); navigate('dashboard'); }
+      });
+    }
+    if (params.get('error') === 'google') navigate('login');
+  }
+
+  function handleResetCallback() {
+    var hash = window.location.hash;
+    if (hash.indexOf('reset-password') !== -1) {
+      var params = new URLSearchParams(hash.replace(/#reset-password\??/, ''));
+      window.resetToken  = params.get('token');
+      window.resetUserId = params.get('id');
+    }
+  }
+
+  window.loginSubmit = async function() {
+    var email    = (document.getElementById('login-email')||{}).value||'';
+    var password = (document.getElementById('login-pass')||{}).value||'';
+    var remember = (document.getElementById('login-remember')||{}).checked||false;
+    var errEl    = document.getElementById('login-error');
+    var btn      = document.getElementById('login-btn');
+    var spin     = document.getElementById('login-spinner');
+    email = email.trim();
+    if (!email || !password) { showAuthErr(errEl,'Completá email y contraseña'); return; }
+    errEl.style.display='none'; btn.disabled=true; spin.style.display='block';
+    try {
+      var res  = await fetch(AUTH_URL+'/auth/login', { method:'POST', credentials:'include', headers:{'Content-Type':'application/json'}, body:JSON.stringify({email,password,remember}) });
+      var data = await res.json();
+      if (!res.ok) { showAuthErr(errEl, data.error||'Error al iniciar sesión'); return; }
+      saveToken(data.access_token);
+      updateUserUI(data.user);
+      navigate('dashboard');
+    } catch(e) { showAuthErr(errEl,'No se pudo conectar al servidor de auth. ¿Está corriendo auth.js en el puerto 3002?'); }
+    finally { btn.disabled=false; spin.style.display='none'; }
+  };
+
+  window.registerSubmit = async function() {
+    var name     = ((document.getElementById('reg-name')||{}).value||'').trim();
+    var email    = ((document.getElementById('reg-email')||{}).value||'').trim();
+    var password = (document.getElementById('reg-pass')||{}).value||'';
+    var company  = ((document.getElementById('reg-company')||{}).value||'').trim();
+    var errEl    = document.getElementById('register-error');
+    var btn      = document.getElementById('reg-btn');
+    var spin     = document.getElementById('reg-spinner');
+    if (!name||!email||!password) { showAuthErr(errEl,'Completá nombre, email y contraseña'); return; }
+    if (password.length<8) { showAuthErr(errEl,'La contraseña debe tener al menos 8 caracteres'); return; }
+    errEl.style.display='none'; btn.disabled=true; spin.style.display='block';
+    try {
+      var res  = await fetch(AUTH_URL+'/auth/register', { method:'POST', credentials:'include', headers:{'Content-Type':'application/json'}, body:JSON.stringify({name,email,password,company}) });
+      var data = await res.json();
+      if (!res.ok) { showAuthErr(errEl, data.error||'Error al crear cuenta'); return; }
+      saveToken(data.access_token);
+      updateUserUI(data.user);
+      navigate('dashboard');
+    } catch(e) { showAuthErr(errEl,'No se pudo conectar al servidor de auth'); }
+    finally { btn.disabled=false; spin.style.display='none'; }
+  };
+
+  window.forgotSubmit = async function() {
+    var email = ((document.getElementById('forgot-email')||{}).value||'').trim();
+    var errEl = document.getElementById('forgot-error');
+    var okEl  = document.getElementById('forgot-ok');
+    var btn   = document.getElementById('forgot-btn');
+    var spin  = document.getElementById('forgot-spinner');
+    if (!email) { showAuthErr(errEl,'Ingresá tu email'); return; }
+    errEl.style.display='none'; okEl.style.display='none'; btn.disabled=true; spin.style.display='block';
+    try {
+      await fetch(AUTH_URL+'/auth/forgot-password', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({email}) });
+      okEl.textContent='✅ Si ese email existe, te enviamos el link. Revisá tu bandeja (y spam).';
+      okEl.style.display='block';
+    } catch(e) { showAuthErr(errEl,'No se pudo conectar al servidor'); }
+    finally { btn.disabled=false; spin.style.display='none'; }
+  };
+
+  window.resetSubmit = async function() {
+    var pass  = (document.getElementById('reset-pass')||{}).value||'';
+    var pass2 = (document.getElementById('reset-pass2')||{}).value||'';
+    var errEl = document.getElementById('reset-error');
+    var okEl  = document.getElementById('reset-ok');
+    var btn   = document.getElementById('reset-btn');
+    var spin  = document.getElementById('reset-spinner');
+    if (!pass||!pass2)  { showAuthErr(errEl,'Completá ambos campos'); return; }
+    if (pass!==pass2)   { showAuthErr(errEl,'Las contraseñas no coinciden'); return; }
+    if (pass.length<8)  { showAuthErr(errEl,'Mínimo 8 caracteres'); return; }
+    if (!window.resetToken||!window.resetUserId) { showAuthErr(errEl,'Link inválido. Solicitá uno nuevo.'); return; }
+    errEl.style.display='none'; okEl.style.display='none'; btn.disabled=true; spin.style.display='block';
+    try {
+      var res  = await fetch(AUTH_URL+'/auth/reset-password', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({user_id:window.resetUserId,token:window.resetToken,password:pass}) });
+      var data = await res.json();
+      if (!res.ok) { showAuthErr(errEl,data.error||'Error al restablecer'); return; }
+      okEl.textContent='✅ Contraseña actualizada. Redirigiendo al login...';
+      okEl.style.display='block';
+      setTimeout(function(){ navigate('login'); }, 2000);
+    } catch(e) { showAuthErr(errEl,'No se pudo conectar al servidor'); }
+    finally { btn.disabled=false; spin.style.display='none'; }
+  };
+
+  window.logoutUser = async function() {
+    try { await fetch(AUTH_URL+'/auth/logout', {method:'POST',credentials:'include'}); } catch(e) {}
+    clearToken(); currentUser=null; navigate('login');
+  };
+
+  window.loginWithGoogle = function() { window.location.href = AUTH_URL+'/auth/google'; };
+
+  window.checkPassStrength = function(val) {
+    ['','2'].forEach(function(sfx) {
+      var fill = document.getElementById('ps-fill'+sfx);
+      var lbl  = document.getElementById('ps-label'+sfx);
+      if (!fill||!lbl) return;
+      var score=0;
+      if (val.length>=8) score++;
+      if (/[A-Z]/.test(val)) score++;
+      if (/[0-9]/.test(val)) score++;
+      if (/[^A-Za-z0-9]/.test(val)) score++;
+      var colors=['#ef4444','#f59e0b','#3b82f6','#00e5a0'];
+      var labels=['Débil','Regular','Buena','Fuerte'];
+      fill.style.width=(score*25)+'%';
+      fill.style.background=colors[score-1]||'transparent';
+      lbl.textContent=score>0?labels[score-1]:'';
+    });
+  };
+
+  window.togglePass = function(inputId,btn) {
+    var inp=document.getElementById(inputId);
+    if (!inp) return;
+    inp.type=inp.type==='password'?'text':'password';
+    btn.textContent=inp.type==='password'?'👁':'🙈';
+  };
+
+  function showAuthErr(el,msg) { if(!el)return; el.textContent='⚠️ '+msg; el.style.display='block'; }
+
+  // Logout desde sidebar (click en avatar)
+  var sbUser = document.querySelector('.sb-user');
+  if (sbUser) { sbUser.style.cursor='pointer'; sbUser.title='Cerrar sesión'; sbUser.addEventListener('click',function(){ if(confirm('¿Querés cerrar sesión?')) logoutUser(); }); }
+
+  // Inicializar auth
+  checkAuth();
+  if (window.location.hash.indexOf('auth-callback')!==-1) handleGoogleCallback();
+  if (window.location.hash.indexOf('reset-password')!==-1) handleResetCallback();
+
+  /* ══════════════════════════════════════════
+     ROUTER
+     ══════════════════════════════════════════ */
 
   window.navigate = function(page) {
     ALL_PAGES.forEach(p => {
