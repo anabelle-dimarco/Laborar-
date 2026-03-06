@@ -267,7 +267,7 @@
 
   <footer class="pub-footer">
     <div class="f-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
-    <p>© 2026 LaborAr. Todos los derechos reservados.</p>
+    <p>© 2026 LaborAr. Hecho con ❤️ en Argentina.</p>
     <div class="f-links">
       <a onclick="navigate('terminos')">Términos</a>
       <a onclick="navigate('privacidad')">Privacidad</a>
@@ -1215,7 +1215,7 @@
   </div>
   <footer class="pub-footer">
     <div class="f-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
-    <p>© 2026 LaborAr. Todos los derechos reservados.</p>
+    <p>© 2026 LaborAr. Hecho con ❤️ en Argentina.</p>
     <div class="f-links"><a onclick="navigate('terminos')">Términos</a><a onclick="navigate('privacidad')">Privacidad</a></div>
   </footer>
 </div>
@@ -1304,6 +1304,227 @@
     <p>© 2026 LaborAr Technologies S.A.</p>
     <div class="f-links"><a onclick="navigate('terminos')">Términos</a><a onclick="navigate('contacto')">Contacto</a></div>
   </footer>
+</div>
+
+<!-- ═══════════════════════════════
+     LOGIN
+     ═══════════════════════════════ -->
+<div id="page-login" class="page landing-style">
+  <div class="auth-page">
+    <div class="auth-left">
+      <div class="auth-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
+      <div class="auth-glow"></div>
+      <div class="auth-left-content">
+        <div class="auth-tagline">El onboarding que <em>retiene</em> talento</div>
+        <div class="auth-stats">
+          <div class="astat"><div class="astat-val">94%</div><div class="astat-lbl">Retención a 90 días</div></div>
+          <div class="astat"><div class="astat-val">8.2d</div><div class="astat-lbl">Onboarding promedio</div></div>
+          <div class="astat"><div class="astat-val">+500</div><div class="astat-lbl">Empresas en LATAM</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="auth-right">
+      <div class="auth-form-box">
+        <div class="auth-form-header">
+          <h1>Bienvenido de nuevo</h1>
+          <p>Iniciá sesión en tu cuenta de LaborAr</p>
+        </div>
+
+        <div id="login-error" class="auth-alert auth-alert-err" style="display:none"></div>
+
+        <!-- Google SSO -->
+        <button class="google-btn" onclick="loginWithGoogle()">
+          <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58z"/></svg>
+          Continuar con Google
+        </button>
+
+        <div class="auth-divider"><span>o con tu email</span></div>
+
+        <div class="af-group">
+          <label>Email</label>
+          <input type="email" id="login-email" placeholder="tu@empresa.com" autocomplete="email"
+            onkeydown="if(event.key==='Enter')document.getElementById('login-pass').focus()">
+        </div>
+        <div class="af-group">
+          <div class="af-label-row">
+            <label>Contraseña</label>
+            <a class="af-forgot" onclick="navigate('forgot-password')">¿Olvidaste tu contraseña?</a>
+          </div>
+          <div class="af-pass-wrap">
+            <input type="password" id="login-pass" placeholder="••••••••" autocomplete="current-password"
+              onkeydown="if(event.key==='Enter')loginSubmit()">
+            <button class="af-eye" onclick="togglePass('login-pass',this)">👁</button>
+          </div>
+        </div>
+        <div class="af-check-row">
+          <label class="af-check">
+            <input type="checkbox" id="login-remember">
+            <span class="checkmark"></span>
+            Recordarme 30 días
+          </label>
+        </div>
+
+        <button class="auth-submit" id="login-btn" onclick="loginSubmit()">
+          <span>Iniciar sesión</span>
+          <div class="auth-spinner" id="login-spinner" style="display:none"></div>
+        </button>
+
+        <p class="auth-switch">¿No tenés cuenta? <a onclick="navigate('register')">Registrate gratis →</a></p>
+        <p class="auth-switch" style="margin-top:0.4rem"><a onclick="navigate('landing')" style="color:var(--muted)">← Volver al inicio</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     REGISTRO
+     ═══════════════════════════════ -->
+<div id="page-register" class="page landing-style">
+  <div class="auth-page">
+    <div class="auth-left">
+      <div class="auth-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
+      <div class="auth-glow"></div>
+      <div class="auth-left-content">
+        <div class="auth-tagline">Empezá gratis.<br><em>14 días</em> sin tarjeta.</div>
+        <ul class="auth-benefits">
+          <li>✓ Flujos automáticos listos en horas</li>
+          <li>✓ Asistente IA 24/7 incluido</li>
+          <li>✓ Integración con Workday y SAP</li>
+          <li>✓ Sin compromiso, cancelá cuando quieras</li>
+        </ul>
+      </div>
+    </div>
+    <div class="auth-right">
+      <div class="auth-form-box">
+        <div class="auth-form-header">
+          <h1>Crear cuenta</h1>
+          <p>Comenzá tu prueba gratuita de 14 días</p>
+        </div>
+
+        <div id="register-error" class="auth-alert auth-alert-err" style="display:none"></div>
+        <div id="register-ok"    class="auth-alert auth-alert-ok"  style="display:none"></div>
+
+        <button class="google-btn" onclick="loginWithGoogle()">
+          <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58z"/></svg>
+          Registrarme con Google
+        </button>
+
+        <div class="auth-divider"><span>o con email</span></div>
+
+        <div class="af-row-2">
+          <div class="af-group">
+            <label>Nombre completo</label>
+            <input type="text" id="reg-name" placeholder="Laura Méndez" autocomplete="name">
+          </div>
+          <div class="af-group">
+            <label>Empresa</label>
+            <input type="text" id="reg-company" placeholder="Mi empresa S.A.">
+          </div>
+        </div>
+        <div class="af-group">
+          <label>Email corporativo</label>
+          <input type="email" id="reg-email" placeholder="laura@empresa.com" autocomplete="email">
+        </div>
+        <div class="af-group">
+          <label>Contraseña (mín. 8 caracteres)</label>
+          <div class="af-pass-wrap">
+            <input type="password" id="reg-pass" placeholder="••••••••"
+              oninput="checkPassStrength(this.value)"
+              onkeydown="if(event.key==='Enter')registerSubmit()">
+            <button class="af-eye" onclick="togglePass('reg-pass',this)">👁</button>
+          </div>
+          <div class="pass-strength" id="pass-strength">
+            <div class="ps-bar"><div id="ps-fill"></div></div>
+            <span id="ps-label"></span>
+          </div>
+        </div>
+
+        <button class="auth-submit" id="reg-btn" onclick="registerSubmit()">
+          <span>Crear cuenta gratis</span>
+          <div class="auth-spinner" id="reg-spinner" style="display:none"></div>
+        </button>
+
+        <p class="auth-switch">¿Ya tenés cuenta? <a onclick="navigate('login')">Iniciá sesión →</a></p>
+        <p class="auth-terms">Al registrarte aceptás los <a onclick="navigate('terminos')">Términos</a> y la <a onclick="navigate('privacidad')">Política de privacidad</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     OLVIDÉ MI CONTRASEÑA
+     ═══════════════════════════════ -->
+<div id="page-forgot-password" class="page landing-style">
+  <div class="auth-page center">
+    <div class="auth-form-box wide">
+      <div class="auth-logo center-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
+      <div class="auth-form-header">
+        <div class="auth-icon-wrap">🔒</div>
+        <h1>Recuperar contraseña</h1>
+        <p>Ingresá tu email y te enviamos un link para restablecer tu contraseña.</p>
+      </div>
+
+      <div id="forgot-error" class="auth-alert auth-alert-err" style="display:none"></div>
+      <div id="forgot-ok"    class="auth-alert auth-alert-ok"  style="display:none"></div>
+
+      <div class="af-group">
+        <label>Email</label>
+        <input type="email" id="forgot-email" placeholder="tu@empresa.com"
+          onkeydown="if(event.key==='Enter')forgotSubmit()">
+      </div>
+
+      <button class="auth-submit" id="forgot-btn" onclick="forgotSubmit()">
+        <span>Enviar link de recuperación</span>
+        <div class="auth-spinner" id="forgot-spinner" style="display:none"></div>
+      </button>
+
+      <p class="auth-switch"><a onclick="navigate('login')">← Volver al login</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     RESET PASSWORD (desde email)
+     ═══════════════════════════════ -->
+<div id="page-reset-password" class="page landing-style">
+  <div class="auth-page center">
+    <div class="auth-form-box wide">
+      <div class="auth-logo center-logo" onclick="navigate('landing')">Labor<span>Ar</span></div>
+      <div class="auth-form-header">
+        <div class="auth-icon-wrap">🔑</div>
+        <h1>Nueva contraseña</h1>
+        <p>Elegí una contraseña segura para tu cuenta.</p>
+      </div>
+
+      <div id="reset-error" class="auth-alert auth-alert-err" style="display:none"></div>
+      <div id="reset-ok"    class="auth-alert auth-alert-ok"  style="display:none"></div>
+
+      <div class="af-group">
+        <label>Nueva contraseña</label>
+        <div class="af-pass-wrap">
+          <input type="password" id="reset-pass" placeholder="••••••••" oninput="checkPassStrength(this.value)">
+          <button class="af-eye" onclick="togglePass('reset-pass',this)">👁</button>
+        </div>
+        <div class="pass-strength" id="pass-strength-2">
+          <div class="ps-bar"><div id="ps-fill-2"></div></div>
+          <span id="ps-label-2"></span>
+        </div>
+      </div>
+      <div class="af-group">
+        <label>Confirmar contraseña</label>
+        <div class="af-pass-wrap">
+          <input type="password" id="reset-pass2" placeholder="••••••••"
+            onkeydown="if(event.key==='Enter')resetSubmit()">
+          <button class="af-eye" onclick="togglePass('reset-pass2',this)">👁</button>
+        </div>
+      </div>
+
+      <button class="auth-submit" id="reset-btn" onclick="resetSubmit()">
+        <span>Guardar nueva contraseña</span>
+        <div class="auth-spinner" id="reset-spinner" style="display:none"></div>
+      </button>
+    </div>
+  </div>
 </div>
 
 <script src="app.js"></script>
